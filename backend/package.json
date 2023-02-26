@@ -1,0 +1,17 @@
+{
+  "name": "backend-server-outlawalert",
+  "version": "0.0.1",
+  "description": "This is the backend server of the outlawalert project",
+  "main": "core.js",
+  "repository": "https://github.com/Yassinos-Coder/outlawalert.git",
+  "author": "Yassinos-Coder",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.10.0"
+  }
+}
