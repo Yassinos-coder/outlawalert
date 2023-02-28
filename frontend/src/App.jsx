@@ -5,6 +5,8 @@ import NotFound from './Pages/NotFound/NotFound'
 import AboutUs from './Pages/AboutUs/AboutUs'
 import SignUp from './Components/SignUp/SignUp'
 import SignIn from './Components/SignIn/SignIn'
+import PrivateRoute from './PrivateRoute'
+import HomeDash from './Pages/HomeDash/HomeDash'
 
 
 const App = () => {
@@ -17,6 +19,11 @@ const App = () => {
             <Route path='/SignUp' element={<SignUp />} />
             <Route path='/SignIn' element={<SignIn />} />
             <Route path='/AboutUs' element={<AboutUs />} />
+            <Route element={<PrivateRoute/>}>
+              <Route path='/:userid/Dashboard' element={<HomeDash />}>
+                
+              </Route>
+            </Route>
           </Routes>
         </BrowserRouter>
     </div>

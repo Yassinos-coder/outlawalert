@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
   const navigate = useNavigate()
+  localStorage.setItem('bigKey', false)
+  localStorage.setItem('DeviceInfo', navigator.userAgent) 
+  localStorage.setItem('OutlawAlertVisitor', true)
+
 
   return (
     <>
