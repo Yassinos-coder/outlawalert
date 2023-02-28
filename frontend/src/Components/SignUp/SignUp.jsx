@@ -1,5 +1,4 @@
 import "./SignUp.css";
-import logo from "../../assets/img/logo.png";
 import StyledButton from "../../Helpers/StyledButton";
 import { useState } from "react";
 import SignUpModal from "../../Modals/SignUpModal";
