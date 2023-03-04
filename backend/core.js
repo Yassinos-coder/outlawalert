@@ -4,6 +4,8 @@ const fileupload = require("express-fileupload")
 const cors = require('cors')
 require('dotenv').config()
 
+const userAPIRouter = require('./APIs/userAPIs')
+
 let db_connection_success;
 const app = express()
 
@@ -17,3 +19,5 @@ mongoose.connect(process.env.MONGO_URI, ()=>
     {db_connection_success = true
     console.info('Database connection granted')
 })
+
+app.use(userAPIRouter)

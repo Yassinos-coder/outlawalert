@@ -1,9 +1,10 @@
 class SignUpModal {
     constructor ( 
-        firstname ='', lastname='', username=`${firstname}.${lastname}`,
+        avatar='default.png', firstname ='', lastname='', username='',
         cin='', address='', email='', phonenumber='', dob='', verification='false',
         password=''
     ){
+        this.avatar = avatar
         this.firstname = firstname
         this.lastname = lastname
         this.username = username

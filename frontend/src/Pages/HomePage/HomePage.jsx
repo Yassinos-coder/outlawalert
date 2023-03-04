@@ -9,7 +9,6 @@ const HomePage = () => {
   localStorage.setItem('DeviceInfo', navigator.userAgent) 
   localStorage.setItem('OutlawAlertVisitor', true)
 
-
   return (
     <>
         <div className="homepage">
@@ -19,9 +18,9 @@ const HomePage = () => {
           <div className="actions-hp">
             <h2 className='h2-hp'>Outlaw Alert System</h2>
             <div className="btnActions">
-              <StyledButton btnType='submit' handler={() => {navigate('./SignUp')}} btnText='Sign Up' />
+              <StyledButton btnType='submit' onClick={() => {navigate('./SignUp')}} btnText='Sign Up' />
               <hr className='hr1'/>
-              <StyledButton handler={() => {navigate('./SignIn')}}  btnType='submit' btnText='Sign In' />
+              <StyledButton onClick={() => {navigate('./SignIn')}}  btnType='submit' btnText='Sign In' />
             </div>
             <div className="moreTxt">
               <p>Sick of seeing unlawfull <br /> behavior be a hero of your home town <br /> and use your phone for <strong>good</strong>.</p>
