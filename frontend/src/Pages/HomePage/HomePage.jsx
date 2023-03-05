@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./HomePage.css";
 import logo from "../../assets/img/logo.png";
 import StyledButton from "../../Helpers/StyledButton";
@@ -6,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SystemsReducer, { GetSystemHealth } from "../../Redux/SystemsReducer";
+import { GetSystemHealth } from "../../Redux/SystemsReducer";
 
 const HomePage = () => {
   const navigate = useNavigate();
