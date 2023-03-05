@@ -23,7 +23,7 @@ const SignIn = () => {
       if (response.payload.giveAccess === true) {
         localStorage.tokenKey = response.payload.token
         localStorage.bigKey = response.payload.giveAccess
-        navigate(`/${response.payload.userData._id}/Dashboard`)
+        navigate(`/Dashboard/${response.payload.userData._id}`)
       } else if (response.payload.message === "WrongPass" && response.payload.giveAccess === false) {
         setErrorLogin(true)
       } else if(response.payload === "UserNoExist") {
