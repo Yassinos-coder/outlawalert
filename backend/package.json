@@ -15,7 +15,7 @@
     "express-fileupload": "^1.4.0",
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.10.0",
+    "mongoose": "^7.0.0",
     "nodemon": "^2.0.21"
   }
 }
