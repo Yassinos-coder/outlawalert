@@ -1,0 +1,25 @@
+.notfound {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.errorPic {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.text {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.a-homepage-error {
+    text-decoration: none;
+    color: yellow;
+}
+
+.a-homepage-error:hover {
+    color: green;
+    font-size: 25px;
+}
