@@ -15,11 +15,11 @@
   overflow: hidden;
 }
 
-button:hover {
+.btn:hover {
   color: black;
 }
 
-button:after {
+.btn:after {
   content: "";
   background: white;
   position: absolute;
@@ -35,7 +35,7 @@ button:after {
   transition: all 0.5s;
 }
 
-button:hover:after {
+.btn:hover:after {
   -webkit-transform: skewX(-45deg) scale(1, 1);
   -ms-transform: skewX(-45deg) scale(1, 1);
   transform: skewX(-45deg) scale(1, 1);
@@ -43,7 +43,7 @@ button:hover:after {
   transition: all 0.5s;
 }
 
-/* Alert PopUp Styling  */ 
+/* Alert PopUp Styling  */
 
 .alertpopup {
   position: absolute;
@@ -113,4 +113,28 @@ button:hover:after {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Styled Button 2 Styling */
+
+.btn2 {
+  font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+  font-size: 1rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 48px;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  padding: 0 1.2rem;
+  color: #ddd;
+  border: none;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+  background: #000000;
+}
+
+.btn2:hover {
+  background: #2b2a2a;
 }

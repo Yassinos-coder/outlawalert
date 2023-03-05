@@ -23,6 +23,10 @@
     width: 70px;
 }
 
+.faBarsHomeDash:hover {
+    color: orangered;
+}
+
 .item2 {
     width: 250px;
     height: 60px;
@@ -42,4 +46,18 @@
 
 .faLogOut:hover {
     color: red;
+}
+
+.bodyHomeDash {
+    margin: auto;
+    position: relative;
+    max-width: 95%;
+    margin-top: 20%;
+}
+
+.itemButton1, .itemButton2, .itemButton3 {
+    display: block;
+    position: relative;
+    left: 20%;
+    margin-bottom: 10px;
 }

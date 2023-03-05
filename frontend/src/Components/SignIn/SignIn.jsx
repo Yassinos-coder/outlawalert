@@ -24,6 +24,8 @@ const SignIn = () => {
         localStorage.tokenKey = response.payload.token
         localStorage.uuid = response.payload.userData._id
         localStorage.username = response.payload.userData.username
+        localStorage.firstname = response.payload.userData.firstname
+
         localStorage.bigKey = response.payload.giveAccess
         navigate(`/Dashboard/${response.payload.userData._id}`)
       } else if (response.payload.message === "WrongPass" && response.payload.giveAccess === false) {
