@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faCircleExclamation, faCircleInfo, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { faCircleExclamation, faCheck, faCircleInfo, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
 
 const AlertPopUp = (props) => {
     const [alertType, setAlertType] = useState(faCircleInfo)
@@ -20,15 +20,19 @@ const AlertPopUp = (props) => {
             setAlertType(faCircleInfo)
         } else if (props.alertType === 'warning') {
             setAlertType(faTriangleExclamation)
-        } else {
+        } else if (props.alertType === 'danger') {
             setAlertType(faCircleExclamation)
+        }else if (props.alertType === 'success') {
+            setAlertType(faCheck)
         }
         if (props.alertType === 'normal') {
             setAlertColor('black')
         } else if (props.alertType === 'warning') {
             setAlertColor('yellow')
-        } else {
+        } else if (props.alertType === 'danger') {
             setAlertColor('red')
+        }else if (props.alertType === 'success') {
+            setAlertType(faCheck)
         }
         setInterval(() => {
             setVisible(false)

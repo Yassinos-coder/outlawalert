@@ -5,25 +5,38 @@ import SignUpModal from "../../Modals/SignUpModal";
 import {useDispatch} from 'react-redux'
 import { AddUser } from "../../Redux/UserReducer";
 import {useNavigate} from 'react-router-dom'
+import AlertPoPUp from '../../Helpers/AlertPopUp'
 
 const SignUp = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [newSignUp, setNewSignUp] = useState(new SignUpModal())
+  const [UserAlreadyExist, setUserAlreadyExist] = useState(false)
+  const [AccountSuccessCreation, setAccountSuccessCreation] = useState(false)
 
   const handleSignUp = () => {
     console.log(newSignUp)
-    dispatch(AddUser(newSignUp)).then((data) => {
-      navigate('/Signin')
+    dispatch(AddUser(newSignUp)).then((response) => {
+      if (response.payload === 'userExists') {
+        setUserAlreadyExist(true)
+      } else if (response.payload === 'AccountCreatedSuccess') { 
+        setAccountSuccessCreation(true)
+      }
+      setTimeout(() => {
+        navigate('/Signin')
+      }, 1000);
     }).catch((err) => {
       console.error('Error in handleSignup', err)
     })
-
   }
 
   return (
     <>
       <div className="signup">
+        <div className="alert">
+          <AlertPoPUp alertTitle='Sign Up Error' alertMsg='This user already exists.' alertType='warning' alertVisible={UserAlreadyExist ===true ? true : false} />
+          <AlertPoPUp alertTitle='Sign Up Success' alertMsg='Account Succesfuly Created.' alertType='success' alertVisible={AccountSuccessCreation === true ? true : false} />
+        </div>
         <div className="signUp">
             <p style={{color:'red', textAlign:'center', paddingTop:'2%'}}>* Please make sure your data is correct.</p>
           <div className="inputs">

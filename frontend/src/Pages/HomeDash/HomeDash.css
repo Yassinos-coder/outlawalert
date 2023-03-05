@@ -1,0 +1,45 @@
+.homedash {
+    position: relative;
+    width: 100%;
+}
+
+.header-homedash {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+
+}
+
+.headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.item1 {
+    border-right: 1px black solid;
+    height: 60px;
+    width: 70px;
+}
+
+.item2 {
+    width: 250px;
+    height: 60px;
+    text-align: center;
+}
+
+.h3-homedash-item2 {
+    line-height: 55px;
+    font-size: 1.5rem;
+}
+
+.item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 60px;
+}
+
+.faLogOut:hover {
+    color: red;
+}

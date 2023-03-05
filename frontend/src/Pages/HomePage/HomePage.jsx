@@ -23,7 +23,6 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(GetSystemHealth())
       .then((response) => {
-        console.log(response);
         switch (true) {
           case response.payload.db === true && response.payload.server === true:
             setWebStatus("green");

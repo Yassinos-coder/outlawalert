@@ -12,11 +12,12 @@ userAPI.post("/user/newUser", async (req, res) => {
   try {
     const DoesUserAlreadyExist = await UserModel.findOne({
       cin: newUserData.cin,
+      email: newUserData.email
     });
     if (DoesUserAlreadyExist) {
       res.send("userExists");
     } else {
-      newUserData.username = newUserData.firstname+'.'+newUserData.lastname
+      newUserData.username = newUserData.firstname.toLowerCase()+'.'+newUserData.lastname.toLowerCase()
       const hashedPassword = await bcrypt.hash(newUserData.password, SaltRounds);
       newUserData.password = hashedPassword
       const addUser = new UserModel(newUserData)
