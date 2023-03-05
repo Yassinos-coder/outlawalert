@@ -44,15 +44,15 @@ userAPI.post('/user/LogIn', async(req, res) => {
             if (result === true) {
                 const jwtToken = jsonwebtoken.sign(isUserLegit.username, process.env.ACCESS_TOKEN)
                 res.send({
-                    token: jwtToken,
-                    userData: isUserLegit,
-                    giveAccess: true
+                  token: jwtToken,
+                  userData: isUserLegit,
+                  giveAccess: true
                 })
             } else {
-                req.send({
-                    message:'WrongPass',
-                    giveAccess: false
-                })
+              res.send({
+                message:'WrongPass',
+                giveAccess: false
+              })
             }
         }else{
             res.send('UserNoExist')

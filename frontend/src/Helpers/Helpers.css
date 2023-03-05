@@ -42,3 +42,75 @@ button:hover:after {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+/* Alert PopUp Styling  */ 
+
+.alertpopup {
+  position: absolute;
+  color: white;
+  transition: ease-in-out 0.3s;
+  background-color: grey;
+  border-radius: 10px;
+  margin: auto;
+  width: 35vh;
+  font-size: 0.9rem;
+  left: 10px;
+  z-index: 1;
+}
+
+.alertBox {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.alertTitle {
+  padding-left: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px black solid;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.alertMsg {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.alertHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Loader Spinner */
+
+.loaderDiv {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.loaderSpin {
+  margin: auto;
+  width: 30px;
+  padding-top: 310px;
+  pointer-events: none;
+}
+
+.logoLoader {
+  max-width: 100%;
+  min-width: 100%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -4,32 +4,44 @@ import { Link, useNavigate } from "react-router-dom";
 import StyledButton from "../../Helpers/StyledButton";
 import SignInModal from "../../Modals/SignInModal";
 import { useState } from "react";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { LogIn } from "../../Redux/UserReducer";
+import AlertPopUp from '../../Helpers/AlertPopUp'
+import Loader from "../../Helpers/Loader";
 
 const SignIn = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [newSignIn, setNewSignIn] = useState(new SignInModal())
+  const [ErrorLogin, setErrorLogin] = useState(false)
+  const [NoUserError, setNoUserError] = useState(false)
+  const pendingStatus = useSelector((state) => state.UserReducer.status);
 
   const handleLogin = () => {
+
     dispatch(LogIn(newSignIn)).then((response) => {
       if (response.payload.giveAccess === true) {
         localStorage.tokenKey = response.payload.token
         localStorage.bigKey = response.payload.giveAccess
         navigate(`/${response.payload.userData._id}/Dashboard`)
-      } else {
-        
+      } else if (response.payload.message === "WrongPass" && response.payload.giveAccess === false) {
+        setErrorLogin(true)
+      } else if(response.payload === "UserNoExist") {
+        setNoUserError(true)
       }
     }).catch((err) => {
       console.error(`Error in LogIn Dispatch ${err}`)
     })
   }
 
-
   return (
     <>
       <div className="signin">
+        <Loader loadVisible={pendingStatus === 'pending' ? true : false} />
+      <div className="alert">
+            <AlertPopUp alertTitle='Login Error' alertVisible={NoUserError === true ? true : false}  alertMsg="This User doesn't exist" alertType='warning' />
+            <AlertPopUp alertTitle='Login Error' alertVisible={ErrorLogin === true ? true : false}  alertMsg="Wrong Password, Try Again !" alertType='danger' />
+      </div>
         <div className="logo">
           <img className="logo-si" src={logo} alt="" />
         </div>

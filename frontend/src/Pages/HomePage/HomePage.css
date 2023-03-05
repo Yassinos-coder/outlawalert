@@ -68,3 +68,9 @@
 .h3-f-hp > a:hover {
     cursor: pointer;
 }
+
+.alert {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+}
