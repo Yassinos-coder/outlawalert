@@ -74,3 +74,11 @@
     top: 5%;
     left: 15%;
 }
+
+.header {
+    
+}
+
+.status {
+    display: flex;
+}

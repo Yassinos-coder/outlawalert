@@ -12,6 +12,13 @@ const HomePage = () => {
   return (
     <>
         <div className="homepage">
+          <div className="header">
+            <div className="status">
+              <div className="status1"></div>
+              <div className="status2"></div>
+              <div className="status3"></div>
+            </div>
+          </div>
           <div className="logo">
             <img className='logo-hp' src={logo} alt="Outlaw Alert System" />
           </div>
