@@ -76,9 +76,28 @@
 }
 
 .header {
-    
+    width: 100%;
 }
 
 .status {
+    position: absolute;
+    top: 5px;
+    left: 20px;
     display: flex;
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+
+.status1 , .status2, .status3 {
+    display: inline;
+    min-width: 130px;
+    max-width: 130px;
+}
+.status1 {
+    min-width: 100px;
+    max-width: 100px;
 }
