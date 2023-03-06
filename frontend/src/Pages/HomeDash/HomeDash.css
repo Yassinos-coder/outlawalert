@@ -1,63 +1,39 @@
 .homedash {
-    position: relative;
-    width: 100%;
-}
-
-.header-homedash {
-    position: relative;
-    width: 100%;
-    height: 60px;
-    background-color: gray;
-
-}
-
-.headerMenu {
-    display: flex;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.item1 {
-    border-right: 1px black solid;
-    height: 60px;
-    width: 70px;
-}
-
-.faBarsHomeDash:hover {
-    color: orangered;
-}
-
-.item2 {
-    width: 250px;
-    height: 60px;
-    text-align: center;
-}
-
-.h3-homedash-item2 {
-    line-height: 55px;
-    font-size: 1.5rem;
-}
-
-.item3 {
-    border-left: 1px black solid;
-    width: 70px;
-    height: 60px;
-}
-
-.faLogOut:hover {
-    color: red;
+  position: relative;
+  width: 100%;
 }
 
 .bodyHomeDash {
-    margin: auto;
-    position: relative;
-    max-width: 95%;
-    margin-top: 20%;
+  margin: auto;
+  position: relative;
+  max-width: 95%;
+  margin-top: 45%;
 }
 
-.itemButton1, .itemButton2, .itemButton3 {
-    display: block;
-    position: relative;
-    left: 20%;
-    margin-bottom: 10px;
+.itemButton1,
+.itemButton2,
+.itemButton3 {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.p-text-bodyHomeDash {
+  position: absolute;
+  top: 30%;
+  left: 12%;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 400px;
+  animation: fade-in 4s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
