@@ -38,7 +38,15 @@ const userModel = db.Schema({
         type: String,
         required: true
     },
-    verification : {
+    verificationToken : {
+        type: String,
+        required: true
+    },
+    tokenExpirationDate : {
+        type: String,
+        required: true
+    },
+    isVerified : {
         type: String,
         required: true
     },

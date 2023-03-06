@@ -1,0 +1,27 @@
+.AccountVerif {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.message {
+    margin-top: 20%;
+}
+
+.btn-verif-accnt {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-verif-accnt:hover {
+    background-color: #2b2a2a;
+}

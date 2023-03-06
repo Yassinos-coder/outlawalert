@@ -7,6 +7,7 @@ import SignUp from './Components/SignUp/SignUp'
 import SignIn from './Components/SignIn/SignIn'
 import PrivateRoute from './PrivateRoute'
 import HomeDash from './Pages/HomeDash/HomeDash'
+import AccountVerif from './Pages/AccountVerif/AccountVerif'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <Route index element={<HomePage />} />
             <Route path='/SignUp' element={<SignUp />} />
             <Route path='/SignIn' element={<SignIn />} />
+            <Route path='/AccountVerification' element={<AccountVerif />} />
             <Route path='/AboutUs' element={<AboutUs />} />
             <Route element={<PrivateRoute/>}>
               <Route path='/Dashboard/:userid/' element={<HomeDash />}>

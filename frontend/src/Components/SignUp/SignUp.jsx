@@ -19,11 +19,11 @@ const SignUp = () => {
     dispatch(AddUser(newSignUp)).then((response) => {
       if (response.payload === 'userExists') {
         setUserAlreadyExist(true)
-      } else if (response.payload === 'AccountCreatedSuccess') { 
+      } else if (response.payload.message === 'AccountCreatedSuccess') { 
         setAccountSuccessCreation(true)
       }
       setTimeout(() => {
-        navigate('/Signin')
+        navigate('/AccountVerification')
       }, 1000);
     }).catch((err) => {
       console.error('Error in handleSignup', err)

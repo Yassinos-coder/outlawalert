@@ -25,13 +25,15 @@ const UserReducer = createSlice({
     name:'UserHandler',
     initialState : {
         userData: [],
+        userInfoForVerif: [],
         status: '',
         error: '',
     },
     reducer:{},
     extraReducers: (builder) => {
         builder
-            .addCase(AddUser.fulfilled, (state ) => {
+            .addCase(AddUser.fulfilled, (state, action ) => {
+                state.userInfoForVerif = action.payload
                 state.status = 'accepted'
             })
             .addCase(AddUser.pending, (state ) => {

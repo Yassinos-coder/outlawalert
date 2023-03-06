@@ -16,6 +16,8 @@
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
-    "nodemon": "^2.0.21"
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.21",
+    "randomstring": "^1.2.3"
   }
 }
