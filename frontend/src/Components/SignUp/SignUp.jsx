@@ -23,7 +23,7 @@ const SignUp = () => {
         setAccountSuccessCreation(true)
       }
       setTimeout(() => {
-        navigate('/AccountVerification')
+        navigate('/')
       }, 1000);
     }).catch((err) => {
       console.error('Error in handleSignup', err)
