@@ -2,3 +2,76 @@
     position: relative;
     width: 100%;
 }
+
+.noticeText {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-top: 10px;
+    min-width: 100%;
+}
+
+.noticeText > p {
+    text-align: center;
+}
+
+.reportSubmittion {
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.reportLables {
+    display: block;
+    font-size: 1.2rem;
+    position: relative;
+    left: 10%;
+    margin-bottom: 10px;
+    max-width: 250px;
+}
+
+.reportInputs {
+    margin-bottom: 10px;
+    position: relative;
+    display: block;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    left: 13%;
+    max-width: 280px;
+    width: 250px;
+}
+
+.reportInputs-file {
+    font-size: 1rem;
+}
+
+.submitButton {
+    max-width: 250px;
+    position: relative;
+    left: 30%;
+}
+
+.incidentLocation {
+    display: inline;
+}
+
+.faLocation {
+    z-index: 999999;
+    color: black;
+    position: relative;
+    font-size: 1.5rem;
+    left: 20px;
+    top: 3px;
+}
+
+.faLocation:hover {
+    color: red;
+}

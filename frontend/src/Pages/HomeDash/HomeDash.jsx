@@ -1,11 +1,10 @@
 import "./HomeDash.css";
-import { useSelector } from "react-redux";
-import StyledButton2 from "../../Helpers/StyledButton2";
+// import { useSelector } from "react-redux";
 import Header from "../../Components/Header/Header";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const HomeDash = () => {
-  const userData = useSelector((state) => state.UserReducer.userData);
+  // const userData = useSelector((state) => state.UserReducer.userData);
 
   return (
     <div className="homedash">

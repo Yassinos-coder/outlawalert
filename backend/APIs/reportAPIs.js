@@ -1,5 +1,6 @@
 const {Router} = require('express')
 const ReportModel = require('../Models/ReportModel')
+const UserModel = require('../Models/UserModel')
 const {JWT} = require('../Helpers/jwtConfig')
 
 const reportAPI = Router()
@@ -23,7 +24,6 @@ reportAPI.post('/report/AddReport', JWT, async(req, res) => {
     try {
         const addNewReport = new ReportModel(newReport)
         await addNewReport.save()
-        console.log(newReport)
         res.send('reportAddedSuccess')
     } catch (err) {
         console.error(`Error in AddReport ${err}`)

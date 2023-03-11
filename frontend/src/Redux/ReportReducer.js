@@ -12,6 +12,7 @@ export const getAllUserReports = createAsyncThunk('reports/getAllUserReports', a
 
 export const addReport = createAsyncThunk('reports/addReport', async({newReport}) => {
     try {
+        console.log(newReport)
         const response = await AxiosConfig.post('/report/AddReport', newReport)
         return response.data
     } catch (err) {

@@ -1,9 +1,10 @@
 class AddReportModal {
     constructor (
-        reporter ='', reportSubject ='', reportMessage='', reportMediaAttachement='', 
+        reporter ='', reportTitle='', reportSubject ='', reportMessage='', reportMediaAttachement='', 
         reportLocationCoords='', reportDate='', isReportAnonyme=''
     ) {
         this.reporter = reporter
+        this.reportTitle = reportTitle
         this.reportSubject = reportSubject
         this.reportMessage = reportMessage
         this.reportMediaAttachement = reportMediaAttachement

@@ -11,6 +11,10 @@ const reportModel = db.Schema({
         type: String,
         required: true,
     },
+    reportTitle : {
+        type: String,
+        required: true,
+    },
     reportMessage : {
         type: String,
         required: true,

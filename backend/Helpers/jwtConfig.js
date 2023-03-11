@@ -8,9 +8,8 @@ exports.JWT = (req, res, next) =>{
     
     if(token === null) res.sendStatus(403)
     jwt.verify(token, process.env.ACCESS_TOKEN, (err, result) =>{
-     
         if (err) console.log(err)
-        if (result) next()
+        next()
     })
 
 }
