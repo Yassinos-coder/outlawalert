@@ -7,6 +7,9 @@ import SignUp from './Components/SignUp/SignUp'
 import SignIn from './Components/SignIn/SignIn'
 import PrivateRoute from './PrivateRoute'
 import HomeDash from './Pages/HomeDash/HomeDash'
+import ReportsHistory from './Pages/ReportsHistory/ReportsHistory'
+import SubmitPublicReport from './Components/SubmitPublicReport/SubmitPublicReport'
+import HomeDashActions from './Components/HomeDashActions/HomeDashActions'
 
 
 const App = () => {
@@ -20,8 +23,10 @@ const App = () => {
             <Route path='/SignIn' element={<SignIn />} />
             <Route path='/AboutUs' element={<AboutUs />} />
             <Route element={<PrivateRoute/>}>
+              <Route path="/ReportsHistory/:userid/" element={<ReportsHistory />} />
               <Route path='/Dashboard/:userid/' element={<HomeDash />}>
-                
+                <Route index element={<HomeDashActions />}/>
+                <Route path="SubmitPublicReport" element={<SubmitPublicReport />}/>
               </Route>
             </Route>
           </Routes>

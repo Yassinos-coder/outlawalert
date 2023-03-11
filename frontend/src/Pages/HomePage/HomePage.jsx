@@ -21,50 +21,54 @@ const HomePage = () => {
   const pendingStatus = useSelector((state) => state.SystemsReducer.status);
 
   useEffect(() => {
-    dispatch(GetSystemHealth())
-      .then((response) => {
-        switch (true) {
-          case response.payload.db === true && response.payload.server === true:
-            setWebStatus("green");
-            setBackStatus("green");
-            setDBStatus("green");
-            break;
-          case response.payload.db === false &&
-            response.payload.server === true:
-            setWebStatus("green");
-            setBackStatus("green");
-            setDBStatus("red");
-            break;
-          case response.payload.db === true &&
-            response.payload.server === false:
+    const statusCheckerInterval = setInterval(() => {
+      dispatch(GetSystemHealth())
+        .then((response) => {
+          switch (true) {
+            case response.payload.db === true &&
+              response.payload.server === true:
+              setWebStatus("green");
+              setBackStatus("green");
+              setDBStatus("green");
+              break;
+            case response.payload.db === false &&
+              response.payload.server === true:
+              setWebStatus("green");
+              setBackStatus("green");
+              setDBStatus("red");
+              break;
+            case response.payload.db === true &&
+              response.payload.server === false:
+              setWebStatus("green");
+              setBackStatus("red");
+              setDBStatus("green");
+              break;
+            case response.payload.db === false &&
+              response.payload.server === false:
+              setWebStatus("green");
+              setBackStatus("red");
+              setDBStatus("red");
+              break;
+            default:
+              break;
+          }
+          if (response.payload === undefined) {
             setWebStatus("green");
             setBackStatus("red");
-            setDBStatus("green");
-            break;
-          case response.payload.db === false &&
-            response.payload.server === false:
-            setWebStatus("green");
-            setBackStatus("red");
             setDBStatus("red");
-            break;
-          default:
-            break;
-        }
-        if (response.payload === undefined) {
-          setWebStatus("green");
-          setBackStatus("red");
-          setDBStatus("red");
-        }
-        if (pendingStatus === "pending") {
-          setWebStatus("yellow");
-          setBackStatus("yellow");
-          setDBStatus("yellow");
-        }
-      })
-      .catch((err) =>
-        console.error(`Error in dispatch(GetSystemHealth) ${err}`)
-      );
-  }, [DBStatus, webStatus, backStatus]);
+          }
+          if (pendingStatus === "pending") {
+            setWebStatus("yellow");
+            setBackStatus("yellow");
+            setDBStatus("yellow");
+          }
+        })
+        .catch((err) =>
+          console.error(`Error in dispatch(GetSystemHealth) ${err}`)
+        );
+    }, 5000);
+    return () => clearInterval(statusCheckerInterval)
+  }, []);
 
   return (
     <div className="homepage">

@@ -1,0 +1,42 @@
+.reportBody {
+    margin: auto;
+    width: 98%;
+    margin-top: 10%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.clearAllReports {
+    float: right;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+
+.clearAllReports:hover {
+    background-color: grey;
+}
+
+.tableMaster {
+    width: 100%;
+}
+
+.tableMasterHead {
+    background-color: grey;
+}
+
+td {
+    padding-left: 10px;
+}
+
+tbody {
+    overflow-x: scroll;
+    overflow-y: scroll;
+}

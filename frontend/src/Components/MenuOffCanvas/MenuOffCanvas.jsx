@@ -2,9 +2,11 @@ import "./MenuOffCanvas.css";
 import React, { useEffect, useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faFile, faChevronLeft, faUser} from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from "react-router-dom";
 
 const MenuOffCanvas = (props) => {
   const [show, setShow] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     setShow(props.isMenuToggle);
@@ -23,12 +25,15 @@ const MenuOffCanvas = (props) => {
         </div>
         <div className="menuActions">
             <div className="btnActionsOffCanvasMenuItem1">
-                <button className="btnActionsOffCanvas" onClick={() => {setShow(!show)}}>
+                <button className="btnActionsOffCanvas" onClick={() => {
+                  setShow(false)
+                  navigate(-1)
+                }}>
                     <FontAwesomeIcon style={{paddingRight:'10px'}} icon={faChevronLeft}/>
                     Back To Homepage</button>
             </div>
             <div className="btnActionsOffCanvasMenuItem2">
-                <button className="btnActionsOffCanvas">
+                <button className="btnActionsOffCanvas" onClick={() => {navigate(`/ReportsHistory/${localStorage.uuid}`)}}>
                     <FontAwesomeIcon style={{paddingRight:'10px'}} icon={faFile}/>
                     Reports History</button>
             </div>

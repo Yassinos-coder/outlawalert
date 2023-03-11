@@ -22,6 +22,14 @@ const reportModel = db.Schema({
     reportLocationCoords:{
         type: String,
         required: true
+    },
+    reportDate : {
+        type: String,
+        required: true
+    },
+    isReportAnonyme : {
+        type: Boolean,
+        required: true
     }
 })
 

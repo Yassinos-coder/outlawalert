@@ -3,37 +3,6 @@
   width: 100%;
 }
 
-.bodyHomeDash {
-  margin: auto;
-  position: relative;
-  max-width: 95%;
-  margin-top: 45%;
-}
-
-.itemButton1,
-.itemButton2,
-.itemButton3 {
-  display: block;
-  position: relative;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.p-text-bodyHomeDash {
-  position: absolute;
-  top: 30%;
-  left: 12%;
-  text-align: center;
-  font-size: 1.5rem;
-  max-width: 400px;
-  animation: fade-in 4s ease-out forwards;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.bodyMain {
+  width: 100%;
 }
