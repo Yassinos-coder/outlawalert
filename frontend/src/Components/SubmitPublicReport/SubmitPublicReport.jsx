@@ -6,13 +6,14 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLocationCrosshairs} from '@fortawesome/free-solid-svg-icons'
 import {useDispatch} from 'react-redux'
 import AddReportModal from '../../Modals/AddReportModal'
-import { addReport } from '../../Redux/ReportReducer'
+import { addReport, uploadMediaAttachement } from '../../Redux/ReportReducer'
 
 const SubmitPublicReport = () => {
     const dispatch = useDispatch()
     const [customReportSubject, setCustomReportSubject] = useState(false)
     const [newReport, setNewReport] = useState(new AddReportModal())
     const [locationCoordAfterFa, setLocationCoordAfterFa] = useState('')
+    const [fileInfo, setFileInfo] = useState()
 
     useEffect(() =>{
         if (navigator.geolocation) {
@@ -36,7 +37,17 @@ const SubmitPublicReport = () => {
     }
 
     const handleReportSubmit = () => {
-        dispatch(addReport({newReport}))
+        let newAddedReportID;
+        dispatch(addReport({newReport})).then((data) => {
+            newAddedReportID = data.payload.report._id
+            console.log(data.payload)
+        })
+        const allfiles = new FormData();
+        for (let i = 0; i < fileInfo.length; i++) {
+            allfiles.append("allfiles", fileInfo[i]);
+        }
+        dispatch(uploadMediaAttachement({userid: localStorage.uuid, files: allfiles, reportID: newAddedReportID}))
+        
     }
 
   return (
@@ -84,7 +95,8 @@ const SubmitPublicReport = () => {
             }}/>
             </span>
             <label htmlFor="uploads" className="reportLables">- Upload Pictures or Videos :</label>
-            <input type="file" id='uploads' className="reportInputs-file reportInputs" title='Upload Pictures or Videos of Incident'/>
+            <input type="file" id='uploads' className="reportInputs-file reportInputs" title='Upload Pictures or Videos of Incident' onChange={(e) => {
+                setFileInfo(e.currentTarget.files)}} multiple/>
         </div>
         <div className="submitButton">
             <StyledButton btnType='submit' btnText='Submit Report' onClick={handleReportSubmit} />

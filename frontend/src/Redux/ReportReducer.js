@@ -12,11 +12,20 @@ export const getAllUserReports = createAsyncThunk('reports/getAllUserReports', a
 
 export const addReport = createAsyncThunk('reports/addReport', async({newReport}) => {
     try {
-        console.log(newReport)
         const response = await AxiosConfig.post('/report/AddReport', newReport)
         return response.data
     } catch (err) {
         console.error(`Error in addReport Reducer ${err}`)
+    }
+})
+
+export const uploadMediaAttachement = createAsyncThunk('reports/uploadMediaAttachement', async({userid, files, reportID}) => {
+    try {
+        console.log(files)
+        const response = await AxiosConfig.post(`/report/UploadMediaOfReports/${userid}/${reportID}`, files)
+        return response.data
+    } catch (err) {
+        console.error(`Error in FilesUpload Reducer ${err}`)
     }
 })
 
@@ -49,6 +58,15 @@ const ReportReducer = createSlice({
                 state.status = 'pending'
             })
             .addCase(addReport.rejected, (state) => {
+                state.status = 'rejected'
+            })
+            .addCase(uploadMediaAttachement.fulfilled,  (state) => {
+                state.status = 'accepted'
+            })
+            .addCase(uploadMediaAttachement.pending,  (state) => {
+                state.status = 'pending'
+            })
+            .addCase(uploadMediaAttachement.rejected, (state) => {
                 state.status = 'rejected'
             })
     },
