@@ -46,7 +46,6 @@ const SubmitPublicReport = () => {
     for (let i = 0; i < fileInfo.length; i++) {
       allfiles.append("allfiles", fileInfo[i]);
     }
-
     dispatch(uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })).then((data) => {
         console.log(data.payload)
       if (data.payload === "uploadSuccess") {
