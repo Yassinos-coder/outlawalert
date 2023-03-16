@@ -2,6 +2,7 @@ const { Router } = require("express");
 const ReportModel = require("../Models/ReportModel");
 const UserModel = require("../Models/UserModel");
 const { JWT } = require("../Helpers/jwtConfig");
+const fs  = require("fs");
 
 const reportAPI = Router();
 
@@ -19,22 +20,25 @@ reportAPI.get("/report/GetUserAllReport", JWT, async (req, res) => {
   }
 });
 
+let ReportIdAfterReporting;
+
 reportAPI.post("/report/AddReport", JWT, async (req, res) => {
   let newReport = req.body;
   try {
-    console.log(req.body);
     const addNewReport = new ReportModel(newReport);
     const newlyAddedReport = await addNewReport.save();
+    ReportIdAfterReporting = await newlyAddedReport._id;
     res.send({
-        report : newlyAddedReport,
-        message: 'success'
+      report: newlyAddedReport,
+      message: "success",
     });
   } catch (err) {
     console.error(`Error in AddReport ${err}`);
+    res.send({ message: "failed" });
   }
 });
 
-reportAPI.post("/report/UploadMediaOfReports/:userid/:reportID", async (req, res) => {
+reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
   let files = req.files.allfiles;
   let userid = req.params.userid;
   try {
@@ -42,21 +46,23 @@ reportAPI.post("/report/UploadMediaOfReports/:userid/:reportID", async (req, res
     if (username === null) {
       res.send("ErrorOnFileUpload");
     } else {
+      fs.mkdirSync(`./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/`)
       files.forEach((file) => {
-        file.mv(
-          `./uploads/${username.username}/ReportsMediaAttachement/${file.name}`,
-          (err) => {
+        let path = `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/${file.name}`
+        file.mv(path, async(err) => {
             if (err) {
               console.error(err);
               return res.status(500).send(err);
             }
+            await ReportModel.updateOne({_id : ReportIdAfterReporting}, {$push:{reportMediaAttachement: path}})
           }
-        );
+        )
+        res.send("uploadSuccess");
       });
-      res.send('uploadSuccess')
     }
   } catch (err) {
     console.error(`Error in UploadMediaOfReports API ${err}`);
+    res.send("failed");
   }
 });
 

@@ -19,10 +19,10 @@ export const addReport = createAsyncThunk('reports/addReport', async({newReport}
     }
 })
 
-export const uploadMediaAttachement = createAsyncThunk('reports/uploadMediaAttachement', async({userid, files, reportID}) => {
+export const uploadMediaAttachement = createAsyncThunk('reports/uploadMediaAttachement', async({userid, files}) => {
     try {
         console.log(files)
-        const response = await AxiosConfig.post(`/report/UploadMediaOfReports/${userid}/${reportID}`, files)
+        const response = await AxiosConfig.post(`/report/UploadMediaOfReports/${userid}`, files)
         return response.data
     } catch (err) {
         console.error(`Error in FilesUpload Reducer ${err}`)
