@@ -52,6 +52,9 @@ const SubmitPublicReport = () => {
       console.log(data.payload);
       if (data.payload === "uploadSuccess") {
         setReportSendingSuccess(true);
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000);
       } else if (data.payload === "failed") {
         setReportSendingFailed(true);
       }
