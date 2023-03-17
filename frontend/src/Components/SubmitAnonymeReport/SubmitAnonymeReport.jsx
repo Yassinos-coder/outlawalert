@@ -1,4 +1,4 @@
-import "./SubmitAnonymeReport.css";
+import "../SubmitPublicReport/SubmitPublicReport.css";
 import React, { useEffect, useState } from "react";
 import AlertPopUp from "../../Helpers/AlertPopUp";
 import { useDispatch } from "react-redux";
