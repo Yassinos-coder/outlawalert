@@ -12,13 +12,13 @@ const SubmitPublicReport = () => {
   const dispatch = useDispatch();
   const [customReportSubject, setCustomReportSubject] = useState(false);
   const [newReport, setNewReport] = useState(new AddReportModal());
-  const [locationCoordAfterFa, setLocationCoordAfterFa] = useState("");
+  const [locationCoordAfterFa, setLocationCoordAfterFa] = useState();
   const [fileInfo, setFileInfo] = useState();
   const [isReportSendingSuccess, setReportSendingSuccess] = useState(false);
   const [ReportSendingFailed, setReportSendingFailed] = useState(false);
 
   useEffect(() => {
-    if (navigator.geolocation) {
+    if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((currentPosition) => {
         console.log(
           `Your position is => Latitude: ${currentPosition.coords.latitude}, Longtitude: ${currentPosition.coords.longitude}, Altitude: ${currentPosition.coords.altitude}`
@@ -156,7 +156,7 @@ const SubmitPublicReport = () => {
           <span>
             <input
               type="text"
-              value={locationCoordAfterFa}
+              value={locationCoordAfterFa === '' ? '' : locationCoordAfterFa}
               id="incidentLocation"
               className="reportInputs incidentLocation"
               placeholder="Enter Incident Location"

@@ -2,7 +2,7 @@ const { Router } = require("express");
 const ReportModel = require("../Models/ReportModel");
 const UserModel = require("../Models/UserModel");
 const { JWT } = require("../Helpers/jwtConfig");
-const fs  = require("fs");
+const fs = require("fs");
 
 const reportAPI = Router();
 
@@ -46,23 +46,26 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
     if (username === null) {
       res.send("ErrorOnFileUpload");
     } else {
-      fs.mkdirSync(`./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/`)
-      files.forEach((file) => {
-        let path = `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/${file.name}`
-        file.mv(path, async(err) => {
-            if (err) {
-              console.warn(err);
-              return res.status(500).send(err);
-            }
-            await ReportModel.updateOne({_id : ReportIdAfterReporting}, {$push:{reportMediaAttachement: path}})
+      fs.mkdirSync(
+        `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/`
+      );
+      await files.forEach((file) => {
+        let path = `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/${file.name}`;
+        file.mv(path, async (err) => {
+          if (err) {
+            console.warn(err);
+          } else {
+            await ReportModel.updateOne(
+              { _id: ReportIdAfterReporting },
+              { $push: { reportMediaAttachement: path } }
+            );
           }
-        )
-        res.send("uploadSuccess");
+        });
       });
+      res.send("uploadSuccess");
     }
   } catch (err) {
     console.warn(`Error in UploadMediaOfReports API ${err}`);
-    res.send("failed");
   }
 });
 
