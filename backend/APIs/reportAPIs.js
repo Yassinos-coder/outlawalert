@@ -16,7 +16,7 @@ reportAPI.get("/report/GetUserAllReport", JWT, async (req, res) => {
       res.send("NoReport");
     }
   } catch (err) {
-    console.error(`Error in GetUserAllReport ${err}`);
+    console.warn(`Error in GetUserAllReport ${err}`);
   }
 });
 
@@ -33,7 +33,7 @@ reportAPI.post("/report/AddReport", JWT, async (req, res) => {
       message: "success",
     });
   } catch (err) {
-    console.error(`Error in AddReport ${err}`);
+    console.warn(`Error in AddReport ${err}`);
     res.send({ message: "failed" });
   }
 });
@@ -51,7 +51,7 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
         let path = `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/${file.name}`
         file.mv(path, async(err) => {
             if (err) {
-              console.error(err);
+              console.warn(err);
               return res.status(500).send(err);
             }
             await ReportModel.updateOne({_id : ReportIdAfterReporting}, {$push:{reportMediaAttachement: path}})
@@ -61,7 +61,7 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
       });
     }
   } catch (err) {
-    console.error(`Error in UploadMediaOfReports API ${err}`);
+    console.warn(`Error in UploadMediaOfReports API ${err}`);
     res.send("failed");
   }
 });
@@ -72,7 +72,7 @@ reportAPI.post("/report/DeleteAllReports", JWT, async (req, res) => {
     await ReportModel.deleteMany({ reporter: uuid });
     res.send("AllDeletedSuccess");
   } catch (err) {
-    console.error(`Error in DeleteAllReports ${err}`);
+    console.warn(`Error in DeleteAllReports ${err}`);
   }
 });
 

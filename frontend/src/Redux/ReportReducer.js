@@ -6,7 +6,7 @@ export const getAllUserReports = createAsyncThunk('reports/getAllUserReports', a
         const response = await AxiosConfig.post('/report/GetUserAllReport', uuid)
         return response.data
     } catch (err) {
-        console.error(`Error in getAllUserReports reducer ${err}`)
+        console.warn(`Error in getAllUserReports reducer ${err}`)
     }
 })
 
@@ -15,7 +15,7 @@ export const addReport = createAsyncThunk('reports/addReport', async({newReport}
         const response = await AxiosConfig.post('/report/AddReport', newReport)
         return response.data
     } catch (err) {
-        console.error(`Error in addReport Reducer ${err}`)
+        console.warn(`Error in addReport Reducer ${err}`)
     }
 })
 
@@ -25,7 +25,7 @@ export const uploadMediaAttachement = createAsyncThunk('reports/uploadMediaAttac
         const response = await AxiosConfig.post(`/report/UploadMediaOfReports/${userid}`, files)
         return response.data
     } catch (err) {
-        console.error(`Error in FilesUpload Reducer ${err}`)
+        console.warn(`Error in FilesUpload Reducer ${err}`)
     }
 })
 

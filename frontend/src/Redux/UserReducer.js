@@ -7,7 +7,7 @@ export const AddUser = createAsyncThunk('user/AddUser', async(newUserData) => {
         const response = await AxiosConfig.post('/user/newUser', newUserData )
         return response.data
     } catch (err) {
-        console.error(`AddUser Reducer ${err}`)
+        console.warn(`AddUser Reducer ${err}`)
     }
 })
 
@@ -16,7 +16,7 @@ export const LogIn = createAsyncThunk('/user/LogIn', async(logInCreds) => {
         const response = await AxiosConfig.post('/user/LogIn', logInCreds)
         return response.data
     } catch (err) {
-        console.error(`Error in LogIn Reducer ${err}`)
+        console.warn(`Error in LogIn Reducer ${err}`)
     }
 })
 

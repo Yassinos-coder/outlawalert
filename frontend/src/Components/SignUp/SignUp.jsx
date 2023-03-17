@@ -26,7 +26,7 @@ const SignUp = () => {
         navigate('/')
       }, 1000);
     }).catch((err) => {
-      console.error('Error in handleSignup', err)
+      console.warn('Error in handleSignup', err)
     })
   }
 

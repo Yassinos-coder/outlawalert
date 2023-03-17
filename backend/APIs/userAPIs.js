@@ -90,7 +90,7 @@ userAPI.post("/user/newUser", async (req, res) => {
     }
   } catch (err) {
     res.send("ErrorWhileMakingAccount");
-    console.error(`newUser API ERROR => ${err}`);
+    console.warn(`newUser API ERROR => ${err}`);
   }
 });
 
@@ -124,7 +124,7 @@ userAPI.post("/user/LogIn", async (req, res) => {
       res.send("UserNoExist");
     }
   } catch (err) {
-    console.error(`Error in logIn API ${err}`);
+    console.warn(`Error in logIn API ${err}`);
   }
 });
 

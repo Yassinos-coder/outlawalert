@@ -41,13 +41,15 @@ const SubmitPublicReport = () => {
   };
 
   const handleReportSubmit = () => {
-    dispatch(addReport({ newReport }))
+    dispatch(addReport({ newReport }));
     const allfiles = new FormData();
     for (let i = 0; i < fileInfo.length; i++) {
       allfiles.append("allfiles", fileInfo[i]);
     }
-    dispatch(uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })).then((data) => {
-        console.log(data.payload)
+    dispatch(
+      uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })
+    ).then((data) => {
+      console.log(data.payload);
       if (data.payload === "uploadSuccess") {
         setReportSendingSuccess(true);
       } else if (data.payload === "failed") {

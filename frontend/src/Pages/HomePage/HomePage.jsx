@@ -64,7 +64,7 @@ const HomePage = () => {
           }
         })
         .catch((err) =>
-          console.error(`Error in dispatch(GetSystemHealth) ${err}`)
+          console.warn(`Error in dispatch(GetSystemHealth) ${err}`)
         );
     }, 5000);
     return () => clearInterval(statusCheckerInterval)

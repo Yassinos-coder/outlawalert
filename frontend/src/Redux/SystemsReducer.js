@@ -7,7 +7,7 @@ export const GetSystemHealth = createAsyncThunk('sys/GetSystemHealth', async() =
         const response = await AxiosConfig.get('/backStatus')
         return response.data
     } catch (err) {
-        console.error(`Error in GetSystemHealth ${err}`)
+        console.warn(`Error in GetSystemHealth ${err}`)
     }
 })
 

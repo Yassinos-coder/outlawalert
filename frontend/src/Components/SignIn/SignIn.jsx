@@ -34,7 +34,7 @@ const SignIn = () => {
         setNoUserError(true)
       }
     }).catch((err) => {
-      console.error(`Error in LogIn Dispatch ${err}`)
+      console.warn(`Error in LogIn Dispatch ${err}`)
     })
   }
 
