@@ -43,22 +43,25 @@ const SubmitAnonymeReport = () => {
   };
 
   const handleReportSubmit = () => {
-    dispatch(addReport({ newReport }));
     const allfiles = new FormData();
     for (let i = 0; i < fileInfo.length; i++) {
       allfiles.append("allfiles", fileInfo[i]);
     }
-    dispatch(
-      uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })
-    ).then((data) => {
-      console.log(data.payload);
-      if (data.payload === "uploadSuccess") {
-        setAnonymeReportSendingSuccess(true);
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
-      } else if (data.payload === "failed") {
-        setAnonymeReportSendingFailed(true);
+    dispatch(addReport({ newReport })).then((data) => {
+      if (data.payload.message === "success") {
+        dispatch(
+          uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })
+        ).then((data) => {
+          console.log(data.payload);
+          if (data.payload === "uploadSuccess") {
+            setAnonymeReportSendingSuccess(true);
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          } else if (data.payload === "failed") {
+            setAnonymeReportSendingFailed(true);
+          }
+        });
       }
     });
   };

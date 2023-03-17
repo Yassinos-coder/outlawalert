@@ -20,14 +20,14 @@ reportAPI.get("/report/GetUserAllReport", JWT, async (req, res) => {
   }
 });
 
-let ReportIdAfterReporting;
-
+let ReportAfterReporting;
 reportAPI.post("/report/AddReport", JWT, async (req, res) => {
   let newReport = req.body;
   try {
     const addNewReport = new ReportModel(newReport);
     const newlyAddedReport = await addNewReport.save();
-    ReportIdAfterReporting = await newlyAddedReport._id;
+    ReportAfterReporting = await newlyAddedReport;
+    console.log(ReportAfterReporting);
     res.send({
       report: newlyAddedReport,
       message: "success",
@@ -41,17 +41,19 @@ reportAPI.post("/report/AddReport", JWT, async (req, res) => {
 reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
   let files = req.files.allfiles;
   let userid = req.params.userid;
-  const report = await ReportModel.findOne({ _id: ReportIdAfterReporting });
   try {
-    if (report.isReportAnonyme) {
+    console.log(ReportAfterReporting);
+    if (ReportAfterReporting.isReportAnonyme) {
+      // here we upload to the anonyme reports because the report is anonyme
+      fs.mkdirSync(`./Uploads/AnonymeReports/${ReportAfterReporting._id}/`);
       await files.forEach((file) => {
-        let path = `./uploads/AnonymeReports/${ReportIdAfterReporting}/${file.name}`;
+        let path = `./Uploads/AnonymeReports/${ReportAfterReporting._id}/${file.name}`;
         file.mv(path, async (err) => {
           if (err) {
             console.warn(err);
           } else {
             await ReportModel.updateOne(
-              { _id: ReportIdAfterReporting },
+              { _id: ReportAfterReporting._id },
               { $push: { reportMediaAttachement: path } }
             );
           }
@@ -59,21 +61,22 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
       });
       res.send("uploadSuccess");
     } else {
+      // here we upload to the public reports because the report is not anonyme
       const username = await UserModel.findOne({ _id: userid });
       if (username === null) {
         res.send("ErrorOnFileUpload");
       } else {
         fs.mkdirSync(
-          `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/`
+          `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement/${ReportAfterReporting._id}/`
         );
         await files.forEach((file) => {
-          let path = `./uploads/${username.username}/ReportsMediaAttachement/${ReportIdAfterReporting}/${file.name}`;
+          let path = `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement/${ReportAfterReporting._id}/${file.name}`;
           file.mv(path, async (err) => {
             if (err) {
               console.warn(err);
             } else {
               await ReportModel.updateOne(
-                { _id: ReportIdAfterReporting },
+                { _id: ReportAfterReporting._id },
                 { $push: { reportMediaAttachement: path } }
               );
             }
