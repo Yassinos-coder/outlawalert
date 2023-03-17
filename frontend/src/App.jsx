@@ -10,6 +10,7 @@ import HomeDash from './Pages/HomeDash/HomeDash'
 import ReportsHistory from './Pages/ReportsHistory/ReportsHistory'
 import SubmitPublicReport from './Components/SubmitPublicReport/SubmitPublicReport'
 import HomeDashActions from './Components/HomeDashActions/HomeDashActions'
+import SubmitAnonymeReport from './Components/SubmitAnonymeReport/SubmitAnonymeReport'
 
 
 const App = () => {
@@ -27,6 +28,8 @@ const App = () => {
               <Route path='/Dashboard/:userid/' element={<HomeDash />}>
                 <Route index element={<HomeDashActions />}/>
                 <Route path="SubmitPublicReport" element={<SubmitPublicReport />}/>
+                <Route path="SubmitAnonymeReport" element={<SubmitAnonymeReport />}/>
+
               </Route>
             </Route>
           </Routes>

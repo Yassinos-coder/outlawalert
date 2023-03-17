@@ -21,7 +21,7 @@ const HomeDashActions = () => {
           </Link>
         </div>
         <div className="itemButton3">
-          <Link to="SubmitPublicReport">
+          <Link to="SubmitAnonymeReport">
             <StyledButton2
               btnType="submit"
               btnText="Submit An Anonymous Report"
