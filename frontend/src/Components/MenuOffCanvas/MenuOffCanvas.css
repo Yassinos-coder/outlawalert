@@ -14,6 +14,8 @@
 
 .OffCanvasActive {
   transform: translateX(100%); /* slide in from left */
+  transform: translateX(100%);
+  z-index: 9999999999;
 }
 .menuTitle {
   text-align: center;
