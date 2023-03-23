@@ -46,19 +46,22 @@ const SubmitPublicReport = () => {
     for (let i = 0; i < fileInfo.length; i++) {
       allfiles.append("allfiles", fileInfo[i]);
     }
-    dispatch(
-      uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })
-    ).then((data) => {
-      console.log(data.payload);
-      if (data.payload === "uploadSuccess") {
-        setReportSendingSuccess(true);
-        setTimeout(() => {
-          window.location.reload()
-        }, 2000);
-      } else if (data.payload === "failed") {
-        setReportSendingFailed(true);
-      }
-    });
+    setTimeout(() => {
+      dispatch(
+        uploadMediaAttachement({ userid: localStorage.uuid, files: allfiles })
+      ).then((data) => {
+        console.log(data.payload);
+        if (data.payload === "uploadSuccess") {
+          setReportSendingSuccess(true);
+          setTimeout(() => {
+            window.location.reload()
+          }, 2000);
+        } else if (data.payload === "failed") {
+          setReportSendingFailed(true);
+        }
+      });
+    },1000)
+    
   };
 
   return (

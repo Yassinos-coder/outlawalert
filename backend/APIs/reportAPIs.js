@@ -54,7 +54,7 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
             } else {
               await ReportModel.updateOne(
                 { _id: IDTOSTRING },
-                { $push: { reportMediaAttachement: path } }
+                { $push: { reportMediaAttachement: `AnonymeReports/${IDTOSTRING}/${file.name}` } }
               );
             }
           });
@@ -77,8 +77,8 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
               } else {
                 await ReportModel.updateOne(
                   { _id: IDTOSTRING },
-                  { $push: { reportMediaAttachement: path } }
-                );
+                  { $push: { reportMediaAttachement: `PublicReports/${username.username}/ReportsMediaAttachement/${IDTOSTRING}/${file.name}` } }
+                  );
               }
             });
           });
@@ -102,5 +102,14 @@ reportAPI.post("/report/DeleteAllReports", JWT, async (req, res) => {
     console.warn(`Error in DeleteAllReports ${err}`);
   }
 });
+
+reportAPI.get('/report/getAllReport', JWT, async(req ,res) => {
+  try {
+    const AllReports = await ReportModel.find({})
+    res.send(AllReports)
+  } catch (err) {
+    console.error(`Error in getAllReport API ${err}`)
+  }
+})
 
 module.exports = reportAPI;

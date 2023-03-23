@@ -10,6 +10,15 @@ export const getAllUserReports = createAsyncThunk('reports/getAllUserReports', a
     }
 })
 
+export const getAllReports = createAsyncThunk('reports/getAllReports', async() => {
+    try {
+        const response = await AxiosConfig.get('/report/getAllReport')
+        return response.data
+    } catch (err) {
+        console.warn(`Error in getAllReports in reducer ${err}`)
+    }
+})
+
 export const addReport = createAsyncThunk('reports/addReport', async({newReport}) => {
     try {
         const response = await AxiosConfig.post('/report/AddReport', newReport)
@@ -34,6 +43,7 @@ const ReportReducer = createSlice({
     name:'ReportHandler',
     initialState : {
         UserReports: [],
+        AllReports: [],
         status: null,
         error: null,
     },
@@ -67,6 +77,16 @@ const ReportReducer = createSlice({
                 state.status = 'pending'
             })
             .addCase(uploadMediaAttachement.rejected, (state) => {
+                state.status = 'rejected'
+            })
+            .addCase(getAllReports.fulfilled,  (state, action) => {
+                state.status = 'accepted'
+                state.AllReports = action.payload
+            })
+            .addCase(getAllReports.pending,  (state) => {
+                state.status = 'pending'
+            })
+            .addCase(getAllReports.rejected, (state) => {
                 state.status = 'rejected'
             })
     },
