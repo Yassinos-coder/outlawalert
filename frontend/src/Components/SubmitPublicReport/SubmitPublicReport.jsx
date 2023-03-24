@@ -7,6 +7,7 @@ import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import AddReportModal from "../../Modals/AddReportModal";
 import { addReport, uploadMediaAttachement } from "../../Redux/ReportReducer";
+import { useNavigate } from 'react-router-dom'
 
 const SubmitPublicReport = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const SubmitPublicReport = () => {
   const [fileInfo, setFileInfo] = useState();
   const [isReportSendingSuccess, setReportSendingSuccess] = useState(false);
   const [ReportSendingFailed, setReportSendingFailed] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -54,7 +56,7 @@ const SubmitPublicReport = () => {
         if (data.payload === "uploadSuccess") {
           setReportSendingSuccess(true);
           setTimeout(() => {
-            window.location.reload()
+            navigate(-1)
           }, 2000);
         } else if (data.payload === "failed") {
           setReportSendingFailed(true);

@@ -7,9 +7,11 @@ import { addReport, uploadMediaAttachement } from "../../Redux/ReportReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import StyledButton from "../../Helpers/StyledButton";
+import { useNavigate } from "react-router-dom";
 
 const SubmitAnonymeReport = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const [customReportSubject, setCustomReportSubject] = useState(false);
   const [newReport, setNewReport] = useState(new AddReportModal());
   const [locationCoordAfterFa, setLocationCoordAfterFa] = useState();
@@ -56,7 +58,7 @@ const SubmitAnonymeReport = () => {
           if (data.payload === "uploadSuccess") {
             setAnonymeReportSendingSuccess(true);
             setTimeout(() => {
-              window.location.reload();
+              navigate(-1);
             }, 2000);
           } else if (data.payload === "failed") {
             setAnonymeReportSendingFailed(true);
