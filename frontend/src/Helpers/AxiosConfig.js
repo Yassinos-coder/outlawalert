@@ -1,12 +1,20 @@
 import axios from 'axios'
 
-const tokenKey = localStorage.getItem('tokenKey') ? localStorage.tokenKey : ''
-
 const AxiosConfig = axios.create({
     baseURL: 'http://192.168.4.4:8009/',
-    headers: {
-        authorization: `bearer ${tokenKey}`
-    }
 })
+
+AxiosConfig.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('tokenKey')
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`
+        }
+        return config
+    },
+    (error) => {
+        return Promise.reject(error)
+    }
+)
 
 export default AxiosConfig

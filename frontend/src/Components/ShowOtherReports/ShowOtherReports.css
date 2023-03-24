@@ -16,20 +16,25 @@
     width: 90%;
     top: 30px;
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 
-.reportMediaAttachement {
+
+.images {
     width: 110px;
     height: 100px;
     aspect-ratio: 1/1;
 }
 
 .reportsDIV {
+    position: relative;
     border-radius: 10px;
     border: 2px black solid;
     background-color: white;
     color: black;
     padding: 5px 5px 10px 5px;
+    left: -5px;
 }
 
 
@@ -46,10 +51,18 @@
 }
 
 .reportMessageDIV {
-    border: 1px grey solid;
+    border: 2px grey solid;
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+.reportMessage {
+    font-size: 17px;
+    padding-top: 5px;
 }
 
 .commentInput {
@@ -64,3 +77,11 @@
 }
 
 
+.reportMediaAttachement {
+    display: grid;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(3, 110px);
+    justify-content: center;
+    column-gap: 5px;
+}
