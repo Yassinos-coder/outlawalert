@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './ShowOtherReports.css'
 import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import Loader from '../../Helpers/Loader'
 import { getAllReports } from '../../Redux/ReportReducer'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faLock } from '@fortawesome/free-solid-svg-icons'
+
 
 const ShowOtherReports = () => {
     const dispatch = useDispatch()
@@ -27,7 +27,7 @@ const ShowOtherReports = () => {
             {
                 AllReports.map((report, index) => (
                     <div key={index} className={`reportsDIV report${index}`}>
-                        <p className='reportTitle'> {report.reportTitle} <FontAwesomeIcon style={{color: 'grey', fontSize:'15px'}} icon={report.isReportAnonyme ? faLock : faEye} /> </p>
+                        <p className='reportTitle'> {report.reportTitle} { report.isReportAnonyme ? (<p style={{ position:'absolute', top:'21px', left:'65px',fontSize:'15px', color:'grey'}}>Private Report</p>) : (<p>Public Report</p>)} </p>
                         <p className='reportSubject'> {report.reportSubject}, {report.reportDate}, à {report.reportLocationCoords}  </p>
                         <div className='reportMessageDIV'>
                             <p className='reportMessage'> {report.reportMessage} </p>
