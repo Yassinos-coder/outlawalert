@@ -45,7 +45,10 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
     if (IDTOSTRING !== undefined) {
       if (ReportAfterReporting.isReportAnonyme) {
         // here we upload to the anonyme reports because the report is anonyme
-        fs.mkdirSync(`./Uploads/AnonymeReports/${IDTOSTRING}/`);
+        const dirpathAnonyme = `./Uploads/AnonymeReports/${IDTOSTRING}/`
+        if (!fs.existsSync(dirpathAnonyme)) {
+          fs.mkdirSync(dirpathAnonyme);
+        }   
         await files.forEach((file) => {
           let path = `./Uploads/AnonymeReports/${IDTOSTRING}/${file.name}`;
           file.mv(path, async (err) => {
@@ -66,9 +69,11 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
         if (username === null) {
           res.send("ErrorOnFileUpload");
         } else {
-          fs.mkdirSync(
-            `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement/${IDTOSTRING}/`
-          );
+          const dirPath = `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement/${IDTOSTRING}`;
+          if (!fs.existsSync(dirPath)) {
+            fs.mkdirSync(`./Uploads/PublicReports/${username.username}/ReportsMediaAttachement`, { recursive: true });
+            fs.mkdirSync(dirPath);
+          }         
           await files.forEach((file) => {
             let path = `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement/${IDTOSTRING}/${file.name}`;
             file.mv(path, async (err) => {
@@ -89,6 +94,7 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
       console.log('ID UNDEFINED')
     }
   } catch (err) {
+    console.log(err)
     console.warn(`Error in UploadMediaOfReports API ${err}`);
   }
 });
