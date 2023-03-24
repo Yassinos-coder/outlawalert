@@ -22,60 +22,63 @@ const ShowOtherReports = () => {
         <div className="cmpTitle">Other Reports</div>
         <div className="reports">
           {AllReports.map((report, index) => (
-            <div key={index} className={`reportsDIV report${index}`}>
-              <span className="reportTitle">
-                {" "}
-                {report.reportTitle}{" "}
-                {report.isReportAnonyme ? (
-                  <p
-                    style={{
-                      position: "relative",
-                      paddingLeft: "10px",
-                      fontSize: "15px",
-                      color: "grey",
-                    }}
-                  >
-                    Private Report
-                  </p>
-                ) : (
-                  <p
-                    style={{
-                      position: "relative",
-                      paddingLeft: "10px",
-                      fontSize: "15px",
-                      color: "grey",
-                    }}
-                  >
-                    Public Report
-                  </p>
-                )}{" "}
-              </span>
-              <p className="reportSubject">
-                {" "}
-                {report.reportSubject}, {report.reportDate}, à{" "}
-                {report.reportLocationCoords}{" "}
-              </p>
-              <div className="reportMessageDIV">
-                <p className="reportMessage"> {report.reportMessage} </p>
-                <div className="reportMediaAttachement">
-                  {report.reportMediaAttachement
-                    .slice(1)
-                    .map((mediaFile, index) => (
-                      <Link
-                        key={index}
-                        to={`http://192.168.4.4:8009/${mediaFile}`}
-                      >
-                        <img
-                          className="images"
+            <>
+              <div key={index} className={`reportsDIV report${index}`}>
+                <span className="reportTitle">
+                  {" "}
+                  {report.reportTitle}{" "}
+                  {report.isReportAnonyme ? (
+                    <p
+                      style={{
+                        position: "relative",
+                        paddingLeft: "10px",
+                        fontSize: "15px",
+                        color: "grey",
+                      }}
+                    >
+                      Private Report
+                    </p>
+                  ) : (
+                    <p
+                      style={{
+                        position: "relative",
+                        paddingLeft: "10px",
+                        fontSize: "15px",
+                        color: "grey",
+                      }}
+                    >
+                      Public Report
+                    </p>
+                  )}{" "}
+                </span>
+                <p className="reportSubject">
+                  {" "}
+                  {report.reportSubject}, {report.reportDate}, à{" "}
+                  {report.reportLocationCoords}{" "}
+                </p>
+                <div className="reportMessageDIV">
+                  <p className="reportMessage"> {report.reportMessage} </p>
+                  <div className="reportMediaAttachement">
+                    {report.reportMediaAttachement
+                      .slice(1)
+                      .map((mediaFile, index) => (
+                        <Link
                           key={index}
-                          src={`http://192.168.4.4:8009/${mediaFile}`}
-                          alt=""
-                        />
-                      </Link>
-                    ))}
+                          to={`http://192.168.4.4:8009/${mediaFile}`}
+                        >
+                          <img
+                            className="images"
+                            key={index}
+                            src={`http://192.168.4.4:8009/${mediaFile}`}
+                            alt=""
+                          />
+                        </Link>
+                      ))}
+                  </div>
                 </div>
               </div>
-            </div>
+              <hr className="hrAfterEachReport" />
+            </>
           ))}
         </div>
       </div>

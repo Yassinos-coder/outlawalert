@@ -85,3 +85,9 @@
     justify-content: center;
     column-gap: 5px;
 }
+
+
+.hrAfterEachReport {
+    margin: auto;
+    width: 90%;
+}
