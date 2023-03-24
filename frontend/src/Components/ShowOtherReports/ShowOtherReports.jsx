@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../Helpers/Loader";
 import { getAllReports } from "../../Redux/ReportReducer";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const ShowOtherReports = () => {
   const dispatch = useDispatch();
@@ -38,7 +38,16 @@ const ShowOtherReports = () => {
                     Private Report
                   </p>
                 ) : (
-                  <p>Public Report</p>
+                  <p
+                    style={{
+                      position: "relative",
+                      paddingLeft: "10px",
+                      fontSize: "15px",
+                      color: "grey",
+                    }}
+                  >
+                    Public Report
+                  </p>
                 )}{" "}
               </span>
               <p className="reportSubject">
@@ -52,7 +61,10 @@ const ShowOtherReports = () => {
                   {report.reportMediaAttachement
                     .slice(1)
                     .map((mediaFile, index) => (
-                      <Link key={index} to={`http://192.168.4.4:8009/${mediaFile}`}>
+                      <Link
+                        key={index}
+                        to={`http://192.168.4.4:8009/${mediaFile}`}
+                      >
                         <img
                           className="images"
                           key={index}

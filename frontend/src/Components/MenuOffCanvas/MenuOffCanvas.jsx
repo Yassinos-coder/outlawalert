@@ -5,7 +5,7 @@ import {faFile, faChevronLeft, faUser} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 
 const MenuOffCanvas = (props) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState();
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const MenuOffCanvas = (props) => {
             <div className="btnActionsOffCanvasMenuItem1">
                 <button className="btnActionsOffCanvas" onClick={() => {
                   setShow(false)
-                  navigate(-1)
+                  navigate(`/Dashboard/${localStorage.uuid}`)
                 }}>
                     <FontAwesomeIcon style={{paddingRight:'10px'}} icon={faChevronLeft}/>
                     Back To Homepage</button>
