@@ -1,3 +1,4 @@
-- Work Anonyme Report 
-- Other Reports Show
-- Fix Bug in public and anonyme reports
+- Work Anonyme Report (Done)
+- Other Reports Show (Done)
+- Fix Bug in public and anonyme reports (Done)
+- Work on Post CMP
