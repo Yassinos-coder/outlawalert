@@ -12,6 +12,7 @@ import SubmitPublicReport from './Components/SubmitPublicReport/SubmitPublicRepo
 import HomeDashActions from './Components/HomeDashActions/HomeDashActions'
 import SubmitAnonymeReport from './Components/SubmitAnonymeReport/SubmitAnonymeReport'
 import ShowOtherReports from './Components/ShowOtherReports/ShowOtherReports'
+import Post from './Components/Post/Post'
 
 
 const App = () => {
@@ -31,8 +32,8 @@ const App = () => {
                 <Route path="SubmitPublicReport" element={<SubmitPublicReport />}/>
                 <Route path="SubmitAnonymeReport" element={<SubmitAnonymeReport />}/>
                 <Route path="ShowOtherReports" element={<ShowOtherReports />}/>
-
               </Route>
+              <Route path="Reports/:reportID" element={<Post />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -86,8 +86,21 @@
     column-gap: 5px;
 }
 
-
 .hrAfterEachReport {
     margin: auto;
     width: 90%;
+}
+
+.faToPost {
+    float: right;
+    font-size: 1.2rem;
+}
+
+.faToPost:hover {
+    color: green;
+    font-size: 1.5rem;
+}
+
+.faToPost:visited {
+    color: blue;
 }

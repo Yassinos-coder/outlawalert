@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../Helpers/Loader";
 import { getAllReports } from "../../Redux/ReportReducer";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const ShowOtherReports = () => {
   const dispatch = useDispatch();
@@ -24,9 +26,16 @@ const ShowOtherReports = () => {
           {AllReports.map((report, index) => (
             <>
               <div key={index} className={`reportsDIV report${index}`}>
+                <Link to={`/Reports/${report._id}`} state={report}>
+                   
+                  <FontAwesomeIcon
+                    className="faToPost"
+                    icon={faUpRightFromSquare}
+                  />
+                </Link>
                 <span className="reportTitle">
-                  {" "}
-                  {report.reportTitle}{" "}
+                   
+                  {report.reportTitle} 
                   {report.isReportAnonyme ? (
                     <p
                       style={{
@@ -49,26 +58,26 @@ const ShowOtherReports = () => {
                     >
                       Public Report
                     </p>
-                  )}{" "}
+                  )} 
                 </span>
                 <p className="reportSubject">
-                  {" "}
-                  {report.reportSubject}, {report.reportDate}, à{" "}
-                  {report.reportLocationCoords}{" "}
+                   
+                  {report.reportSubject}, {report.reportDate}, à 
+                  {report.reportLocationCoords} 
                 </p>
                 <div className="reportMessageDIV">
                   <p className="reportMessage"> {report.reportMessage} </p>
                   <div className="reportMediaAttachement">
                     {report.reportMediaAttachement
                       .slice(1)
-                      .map((mediaFile, index) => (
+                      .map((mediaFile, indexMedia) => (
                         <Link
-                          key={index}
+                          key={indexMedia}
                           to={`http://192.168.4.4:8009/${mediaFile}`}
                         >
                           <img
+                            key={indexMedia}
                             className="images"
-                            key={index}
                             src={`http://192.168.4.4:8009/${mediaFile}`}
                             alt=""
                           />

@@ -52,7 +52,7 @@ const SignIn = () => {
         <div className="login-box">
           <div className="userBox">
             <label className="labels-login" htmlFor="cin">C.I.N</label>
-            <input className="input-login" type="text" required name="cin" placeholder="Entrez votre CIN"  onChange={(e) => {setNewSignIn({...newSignIn, cin: e.currentTarget.value})}}/>
+            <input className="input-login" type="text" required name="cin" placeholder="Entrez votre CIN"  onChange={(e) => {setNewSignIn({...newSignIn, cin: e.currentTarget.value.toLowerCase()})}}/>
           </div>
           <div className="userBox">
             <label className="labels-login" htmlFor="password">Password</label>
