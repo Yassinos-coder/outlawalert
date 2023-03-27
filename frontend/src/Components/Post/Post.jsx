@@ -10,7 +10,7 @@ const Post = () => {
   const location = useLocation();
   const reportData = location.state;
   const [commentSectionVisibility, setCommentSectionVisibility] = useState(faAngleDown);
-  const CommentsOnPost = useSelector((state) => state.ReportsReducer.CommentsOnPost)
+  // const CommentsOnPost = useSelector((state) => state.ReportsReducer.CommentsOnPost)
 
   const handleCommentSectionCollapse = () => {
     setCommentSectionVisibility(
@@ -95,11 +95,11 @@ const Post = () => {
             />
           </p>
           <div className="commentsOnPost">
-            {
+            {/* {
               CommentsOnPost.map((comment, index) => (
                 <div key={index} className={`post postnumber${index}`}></div>
               ))
-            }
+            } */}
           </div>
         </div>
       </div>
