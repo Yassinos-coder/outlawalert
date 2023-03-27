@@ -45,6 +45,20 @@
   min-width: 100%;
 }
 
+.sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.sendButton:hover {
+    border-radius: 50%;
+    color: green;
+}
+
 .post {
 
 }

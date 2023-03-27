@@ -6,6 +6,7 @@ require('dotenv').config()
 
 const userAPIRouter = require('./APIs/userAPIs')
 const reportAPI = require('./APIs/reportAPIs')
+const CommentsOnPostAPI = require('./APIs/CommentsAPI')
 
 let db_connection_success;
 const app = express()
@@ -27,6 +28,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 app.use(userAPIRouter)
 app.use(reportAPI)
+app.use(CommentsOnPostAPI)
 
 app.get('/backStatus', async(req, res) => {
     if (db_connection_success === true) {
