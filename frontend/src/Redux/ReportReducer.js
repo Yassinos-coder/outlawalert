@@ -44,6 +44,7 @@ const ReportReducer = createSlice({
     initialState : {
         UserReports: [],
         AllReports: [],
+        CommentsOnPost : [],
         status: null,
         error: null,
     },

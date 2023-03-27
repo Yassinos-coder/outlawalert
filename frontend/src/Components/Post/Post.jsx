@@ -1,11 +1,22 @@
 import "./Post.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Header from "../Header/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from 'react-redux'
 
 const Post = () => {
   const location = useLocation();
   const reportData = location.state;
+  const [commentSectionVisibility, setCommentSectionVisibility] = useState(faAngleDown);
+  const CommentsOnPost = useSelector((state) => state.ReportsReducer.CommentsOnPost)
+
+  const handleCommentSectionCollapse = () => {
+    setCommentSectionVisibility(
+      commentSectionVisibility === faAngleDown ? faAngleUp : faAngleDown
+    );
+  };
 
   return (
     <>
@@ -66,7 +77,29 @@ const Post = () => {
                   ))}
               </div>
             </div>
-            <input type="text" name="sendComment" className="commentInput"  placeholder="Write comment....."/>
+            <input
+              type="text"
+              name="sendComment"
+              className="commentInput"
+              placeholder="Write comment....."
+            />
+          </div>
+        </div>
+        <div className="commentSection">
+          <p className="titleComment" onClick={handleCommentSectionCollapse}>
+            
+            Comments Section :
+            <FontAwesomeIcon
+              style={{ paddingLeft: "170px", fontSize: "16px" }}
+              icon={commentSectionVisibility}
+            />
+          </p>
+          <div className="commentsOnPost">
+            {
+              CommentsOnPost.map((comment, index) => (
+                <div key={index} className={`post postnumber${index}`}></div>
+              ))
+            }
           </div>
         </div>
       </div>
