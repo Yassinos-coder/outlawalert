@@ -39,26 +39,75 @@
   border-radius: 10px;
 }
 
+.sendButton {
+  position: relative;
+  top: -20px;
+  font-size: 17px;
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.sendButton:hover {
+  border-radius: 50%;
+  color: green;
+}
+
 .commentsOnPost {
   display: flex;
   max-width: 100%;
   min-width: 100%;
+  flex-wrap: wrap;
 }
 
-.sendButton {
-    position: relative;
-    top: -20px;
-    font-size: 17px;
-    float: right;
-    padding-right: 10px;
-    padding-left: 10px;
+.comment {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px grey solid;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
 }
 
-.sendButton:hover {
-    border-radius: 50%;
-    color: green;
+/* .commentHeader {
+} */
+
+.usernameOfCommenter {
+  position: relative;
+  top: -25px;
+  left: 50px;
+  font-size: 1.2rem;
+  background-color: rgba(128, 128, 128, 0.4);
+  width: 35%;
+  text-align: center;
 }
 
-.post {
+.commenterLogo {
+  background-color: rgba(128, 128, 128, 0.4);
+  position: relative;
+  border-radius: 10px;
+  width: 35px;
+  overflow: hidden;
+  left: 10px;
+  top: 5px;
+}
 
+.commenterLogo > img {
+  width: 30px;
+  position: relative;
+  top: 1px;
+  left: 3px;
+}
+
+.commentText {
+  margin: auto;
+  position: relative;
+  width: 300px;
+  font-size: 18px;
+  left: 15px;
+  color: black;
+  top: -15px;
+  border-radius: 10px;
+  
 }

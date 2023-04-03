@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Post.css";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -8,20 +9,33 @@ import {
   faAngleUp,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import CommentModal from "../../Modals/CommentModal";
+import {
+  AddComment,
+  getAllCommentsOfReport,
+} from "../../Redux/CommentsReducer";
 
 const Post = () => {
   const location = useLocation();
   const reportData = location.state;
+  const dispatch = useDispatch();
+  const [newComment, setNewComment] = useState(new CommentModal());
   const [commentSectionVisibility, setCommentSectionVisibility] =
     useState(faAngleDown);
-  // const CommentsOnPost = useSelector((state) => state.ReportsReducer.CommentsOnPost)
+  const CommentsOnPost = useSelector(
+    (state) => state.CommentsReducer.CommentsOnPost
+  );
 
   const handleCommentSectionCollapse = () => {
     setCommentSectionVisibility(
       commentSectionVisibility === faAngleDown ? faAngleUp : faAngleDown
     );
   };
+
+  useEffect(() => {
+    dispatch(getAllCommentsOfReport({ reportID: reportData._id }));
+  }, []);
 
   return (
     <>
@@ -82,14 +96,27 @@ const Post = () => {
                   ))}
               </div>
             </div>
-            <div>
+            <div style={{ marginTop: "15px" }}>
               <input
                 type="text"
                 name="sendComment"
                 className="commentInput"
                 placeholder="Write comment....."
+                onChange={(e) => {
+                  setNewComment({
+                    comment: e.currentTarget.value,
+                    reportID: reportData._id,
+                    commenterID: localStorage.uuid,
+                  });
+                }}
               />
-                <FontAwesomeIcon icon={faPaperPlane} className="sendButton" />
+              <FontAwesomeIcon
+                icon={faPaperPlane}
+                className="sendButton"
+                onClick={() => {
+                  dispatch(AddComment({ commentData: newComment }));
+                }}
+              />
             </div>
           </div>
         </div>
@@ -102,11 +129,22 @@ const Post = () => {
             />
           </p>
           <div className="commentsOnPost">
-            {/* {
-              CommentsOnPost.map((comment, index) => (
-                <div key={index} className={`post postnumber${index}`}></div>
-              ))
-            } */}
+            {CommentsOnPost.map((comment, index) => (
+              <div style={commentSectionVisibility === faAngleDown ? {display:'initial'} : {display:'none'}} key={index} className={`comment commentnumber${index}`}>
+                <div className="commentHeader">
+                  <div className="commenterLogo">
+                    <img
+                      src="https://raw.githubusercontent.com/Yassinos-coder/smp-project/main/front-end/src/assets/imgs/profile_pic.webp"
+                      alt=""
+                    />
+                  </div>
+                  <p className="usernameOfCommenter">{comment.commenterUsername} </p>
+                </div>
+                <div className="commentText">
+                  <p> {comment.comment} </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

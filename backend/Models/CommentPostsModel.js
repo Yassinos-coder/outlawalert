@@ -7,7 +7,7 @@ const commentPostsModel = db.Schema({
         required: true,
         ref: 'Reports'
     },
-    commenter : {
+    commenterID : {
         type: mongoose.Types.ObjectId,
         required: true,
         ref:'Users'
@@ -15,6 +15,10 @@ const commentPostsModel = db.Schema({
     comment : {
         type:'String',
         required: true,
+    },
+    commenterUsername : {
+        type: 'String',
+        required: true
     },
 })
 
