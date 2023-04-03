@@ -6,10 +6,10 @@ const fs = require("fs");
 
 const reportAPI = Router();
 
-reportAPI.get("/report/GetUserAllReport", JWT, async (req, res) => {
-  let uuid = req.body;
+reportAPI.get("/report/GetUserAllReport/:uuid", JWT, async (req, res) => {
+  let uuid = req.params.uuid;
   try {
-    const UserAllReport = await ReportModel.findOne({ reporter: uuid });
+    const UserAllReport = await ReportModel.find({ reporter: uuid });
     if (UserAllReport) {
       res.send(UserAllReport);
     } else {
@@ -99,13 +99,20 @@ reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
   }
 });
 
-reportAPI.post("/report/DeleteAllReports", JWT, async (req, res) => {
-  let uuid = req.body;
+reportAPI.post("/report/DeleteAllReports/:uuid", JWT, async (req, res) => {
+  let uuid = req.params.uuid;
   try {
     await ReportModel.deleteMany({ reporter: uuid });
-    res.send("AllDeletedSuccess");
+    const listAfterDelete = await ReportModel.find({reporter: uuid})
+    res.send({
+      listAfterDelete: listAfterDelete,
+      message: 'deleteSuccess'
+    });
   } catch (err) {
     console.warn(`Error in DeleteAllReports ${err}`);
+    res.send({
+      message: 'deleteFailed'
+    })
   }
 });
 

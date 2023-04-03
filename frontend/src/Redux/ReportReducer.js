@@ -3,7 +3,7 @@ import AxiosConfig from '../Helpers/AxiosConfig'
 
 export const getAllUserReports = createAsyncThunk('reports/getAllUserReports', async({uuid}) => {
     try {
-        const response = await AxiosConfig.post('/report/GetUserAllReport', uuid)
+        const response = await AxiosConfig.get(`/report/GetUserAllReport/${uuid}`)
         return response.data
     } catch (err) {
         console.warn(`Error in getAllUserReports reducer ${err}`)
@@ -38,6 +38,14 @@ export const uploadMediaAttachement = createAsyncThunk('reports/uploadMediaAttac
     }
 })
 
+export const deleteAllReports = createAsyncThunk('reports/deleteAllReports', async({uuid}) => {
+    try {
+        const response = await AxiosConfig.post(`/report/DeleteAllReports/${uuid}`)
+        return response.data
+    } catch (err) {
+        console.warn(`Error in deleteAllReports ${err}`)
+    }
+})
 
 const ReportReducer = createSlice({
     name:'ReportHandler',
@@ -87,6 +95,16 @@ const ReportReducer = createSlice({
                 state.status = 'pending'
             })
             .addCase(getAllReports.rejected, (state) => {
+                state.status = 'rejected'
+            })
+            .addCase(deleteAllReports.fulfilled,  (state, action) => {
+                state.status = 'accepted'
+                state.AllReports = action.payload.listAfterDelete
+            })
+            .addCase(deleteAllReports.pending,  (state) => {
+                state.status = 'pending'
+            })
+            .addCase(deleteAllReports.rejected, (state) => {
                 state.status = 'rejected'
             })
     },
