@@ -23,7 +23,6 @@ CommentsOnPostAPI.post('/comments/AddComment', JWT, async(req, res ) => {
 
 CommentsOnPostAPI.get('/comments/getAllComments/:reportID', JWT, async(req, res) => {
     let reportID = req.params.reportID
-    console.log(reportID)
     try {
         const comments = await CommentPostsModel.find({reportID: reportID})
         res.send(comments)

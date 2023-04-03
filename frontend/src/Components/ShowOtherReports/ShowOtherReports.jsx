@@ -25,15 +25,15 @@ const ShowOtherReports = () => {
         <div className="reports">
           {AllReports.map((report, index) => (
             <>
-              <div key={index} className={`reportsDIV report${index}`}>
-                <Link to={`/Reports/${report._id}`} state={report}>
+              <div key={report._id} className={`reportsDIV report${index}`}>
+                <Link  to={`/Reports/${report._id}`} state={report}>
                    
                   <FontAwesomeIcon
                     className="faToPost"
                     icon={faUpRightFromSquare}
                   />
                 </Link>
-                <span className="reportTitle">
+                <span  className="reportTitle">
                    
                   {report.reportTitle} 
                   {report.isReportAnonyme ? (
@@ -67,7 +67,7 @@ const ShowOtherReports = () => {
                 </p>
                 <div className="reportMessageDIV">
                   <p className="reportMessage"> {report.reportMessage} </p>
-                  <div className="reportMediaAttachement">
+                  <div  className="reportMediaAttachement">
                     {report.reportMediaAttachement
                       .slice(1)
                       .map((mediaFile, indexMedia) => (
