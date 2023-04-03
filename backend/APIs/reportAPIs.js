@@ -104,6 +104,9 @@ reportAPI.post("/report/DeleteAllReports/:uuid", JWT, async (req, res) => {
   try {
     await ReportModel.deleteMany({ reporter: uuid });
     const listAfterDelete = await ReportModel.find({reporter: uuid})
+    const username = await UserModel.findOne({_id: uuid})
+    const path = `./Uploads/PublicReports/${username.username}/ReportsMediaAttachement`
+    fs.rmSync(path, { recursive: true, force: true })
     res.send({
       listAfterDelete: listAfterDelete,
       message: 'deleteSuccess'
