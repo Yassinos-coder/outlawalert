@@ -11,7 +11,7 @@ const Header = () => {
 
   const handleLogOut = () => {
     navigate("/");
-    localStorage.removeItem("tokenKey");
+    localStorage.clear();
   };
 
   const handleMenuToggle = () => {

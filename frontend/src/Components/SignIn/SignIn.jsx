@@ -8,10 +8,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { LogIn } from "../../Redux/UserReducer";
 import AlertPopUp from '../../Helpers/AlertPopUp'
 import Loader from "../../Helpers/Loader";
+import audiofile from '../../assets/sounds/login_success.mp3'
+
 
 const SignIn = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const audioSuccess = new Audio(audiofile);
   const [newSignIn, setNewSignIn] = useState(new SignInModal())
   const [ErrorLogin, setErrorLogin] = useState(false)
   const [NoUserError, setNoUserError] = useState(false)
@@ -25,7 +28,8 @@ const SignIn = () => {
         localStorage.uuid = response.payload.userData._id
         localStorage.username = response.payload.userData.username
         localStorage.firstname = response.payload.userData.firstname
-
+        audioSuccess.volume = 0.4;
+        audioSuccess.play();
         localStorage.bigKey = response.payload.giveAccess
         navigate(`/Dashboard/${response.payload.userData._id}`)
       } else if (response.payload.message === "WrongPass" && response.payload.giveAccess === false) {
