@@ -1,4 +1,7 @@
 - Work Anonyme Report (Done)
 - Other Reports Show (Done)
 - Fix Bug in public and anonyme reports (Done)
-- Work on Post CMP
+- Work on Post CMP (Done)
+- Commenting on report (Done)
+- Sound Moved to Sign In Component (Done)
+- Css Styling Beta Version (Done)
