@@ -1,0 +1,60 @@
+.myaccount {
+    width: 100%;
+} 
+
+.ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 145px;
+    top: 30px;
+}
+
+.hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+}
+
+.faRepeat:hover {
+    color: yellow;
+}
+
+.faTrash:hover {
+    color: red;
+}
+
+
+.pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 20px;
+    left: 90px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.btnListActions {   
+    position: relative;
+    text-align: center;
+    top: 50px;
+}
+
+.btnListActions > div {
+    margin-bottom: 10px;
+}

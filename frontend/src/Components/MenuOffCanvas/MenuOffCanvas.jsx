@@ -38,7 +38,7 @@ const MenuOffCanvas = (props) => {
                     Reports History</button>
             </div>
             <div className="btnActionsOffCanvasMenuItem3">
-                <button className="btnActionsOffCanvas">
+                <button className="btnActionsOffCanvas" onClick={() => {navigate(`/MyAccount/${localStorage.uuid}`)}}>
                     <FontAwesomeIcon style={{paddingRight:'10px'}} icon={faUser}/>
                     My Account</button>
             </div>

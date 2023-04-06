@@ -13,6 +13,7 @@ import HomeDashActions from './Components/HomeDashActions/HomeDashActions'
 import SubmitAnonymeReport from './Components/SubmitAnonymeReport/SubmitAnonymeReport'
 import ShowOtherReports from './Components/ShowOtherReports/ShowOtherReports'
 import Post from './Components/Post/Post'
+import MyAccount from './Pages/MyAccount/MyAccount'
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="ShowOtherReports" element={<ShowOtherReports />}/>
               </Route>
               <Route path="Reports/:reportID" element={<Post />} />
+              <Route path="/MyAccount/:uuid" element={<MyAccount />}/>
             </Route>
           </Routes>
         </BrowserRouter>
