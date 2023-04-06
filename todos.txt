@@ -6,3 +6,5 @@
 - Sound Moved to Sign In Component (Done)
 - Css Styling Beta Version (Done)
 - Report History BackEnd Side / FrontEnd Side (Done)
+- My Account FrontEnd (Done)
+- My Account BackEnd/Actions etc... (todo)
