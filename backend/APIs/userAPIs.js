@@ -128,4 +128,41 @@ userAPI.post("/user/LogIn", async (req, res) => {
   }
 });
 
+userAPI.post('/user/ProfilePictureUpdate/:uuid', async(req, res) => {
+  let userid = req.params.uuid
+  let newPicture = req.files.newPicture
+  try {
+    const userData = await UserModel.findOne({_id: userid})
+    const dirUserpath = `./Uploads/UsersProfilePics/${userData.username}/`
+    if (!fs.existsSync(dirUserpath)) {
+      fs.mkdirSync(dirUserpath);
+    }
+    let SplitnewPictureName = newPicture.name.split('.')
+    SplitnewPictureName = `${userData._id}.${SplitnewPictureName[1]}`
+    newPicture.name = SplitnewPictureName
+    let saveToPath = `./Uploads/UsersProfilePics/${userData.username}/${newPicture.name}`
+    newPicture.mv(saveToPath, async(err) => {
+      if (err) {
+        console.error(`Error in mv Func ${err}`)
+        res.send({
+          message: 'updateFailed'
+        })
+      } else {
+        await UserModel.updateOne({_id: userid}, {avatar: newPicture.name})
+        res.send({
+          message: 'updateSuccess'
+        })
+      }
+
+    })
+
+
+  } catch (error) {
+    console.error(`Error in uploadPic API ${err}`)
+    res.send({
+      message: 'updateFailed'
+    })
+  }
+})
+
 module.exports = userAPI;

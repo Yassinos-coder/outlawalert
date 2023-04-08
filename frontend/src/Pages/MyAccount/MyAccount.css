@@ -27,6 +27,11 @@
     color: yellow;
 }
 
+.faTrash {
+    position: relative;
+    left: 40px;
+}
+
 .faTrash:hover {
     color: red;
 }

@@ -20,6 +20,16 @@ export const LogIn = createAsyncThunk('/user/LogIn', async(logInCreds) => {
     }
 })
 
+export const ProfilePicUpdater = createAsyncThunk('user/ProfilePicUpdater', async({uuid, newPicture}) => {
+    try {
+        const response = await AxiosConfig.post(`/user/ProfilePictureUpdate/${uuid}`, newPicture)
+        return response.data
+    } catch (err) {
+        console.warn(`Error in ProfilePictureUpdate Reducer ${err}`)
+    }
+})
+
+
 
 const UserReducer = createSlice({
     name:'UserHandler',
@@ -48,6 +58,15 @@ const UserReducer = createSlice({
                 state.status = 'pending'
             })
             .addCase(LogIn.rejected, (state ) => {
+                state.status = 'rejected'
+            })
+            .addCase(ProfilePicUpdater.fulfilled, (state, action) => {
+                state.status = 'accepted'
+            })
+            .addCase(ProfilePicUpdater.pending, (state) => {
+                state.status = 'pending'
+            })
+            .addCase(ProfilePicUpdater.rejected, (state ) => {
                 state.status = 'rejected'
             })
     }
