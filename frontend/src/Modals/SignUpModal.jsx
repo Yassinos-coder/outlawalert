@@ -1,6 +1,6 @@
 class SignUpModal {
     constructor ( 
-        avatar='default.png', firstname ='', lastname='', username='',
+        avatar='noavatar', firstname ='', lastname='', username='',
         cin='', address='', email='', phonenumber='', dob='', tokenExpirationDate='', verificationToken='',isVerified='false',
         password=''
     ){

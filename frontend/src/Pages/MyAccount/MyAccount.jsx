@@ -13,6 +13,7 @@ import AlertPopUp from "../../Helpers/AlertPopUp";
 import {
   DeleterUserAvatar,
   EmailUpdate,
+  GetUserData,
   PasswordUpdate,
   ProfilePicUpdater,
   UserDeleteAccount,
@@ -38,16 +39,28 @@ const MyAccount = () => {
   const [ToggleEmailUpdate, setToggleEmailUpdate] = useState(false);
   const [TogglePassUpdate, setTogglePassUpdate] = useState(false);
   const [ToggleDeleteAccount, setToggleDeleteAccount] = useState(false);
-  const [UserDeleteSuccess, setUserDeleteSuccess] = useState(false)
-  const [UserDeleteFail, setUserDeleteFail] = useState(false)
+  const [UserDeleteSuccess, setUserDeleteSuccess] = useState(false);
+  const [UserDeleteFail, setUserDeleteFail] = useState(false);
+  const [AvatarOnDisplay, setAvatarOnDisplay] = useState();
 
   useEffect(() => {
     if (
-      JSON.stringify(userData.userData) === "{}" ||
-      userData.userData === undefined ||
-      userData.userData === null
+      JSON.stringify(userData) === "{}" ||
+      userData === undefined ||
+      userData === null
     ) {
       navigate("/SignIn");
+    }
+    if (userData.length === 0 || userData.length <= 0) {
+      dispatch(GetUserData({ uuid: localStorage.uuid }));
+    }
+    console.log(userData);
+    if (userData.avatar && userData.avatar !== "noavatar") {
+      setAvatarOnDisplay(
+        `http://localhost:8009/UsersProfilePics/${userData.username}/${userData.avatar}`
+      );
+    } else {
+      setAvatarOnDisplay("http://localhost:8009/UsersProfilePics/default.png");
     }
   }, [userData]);
 
@@ -119,19 +132,19 @@ const MyAccount = () => {
   };
 
   const handleDeleteAccountToggle = () => {
-    setToggleDeleteAccount(!ToggleDeleteAccount)
-  }
+    setToggleDeleteAccount(!ToggleDeleteAccount);
+  };
 
   const handleDeleteAccountConfirmation = () => {
-    dispatch(UserDeleteAccount({uuid: localStorage.uuid})).then((data) => {
-      if (data.payload.message === 'UserDeleteSuccess') {
-        setUserDeleteSuccess(true)
-        navigate('/')
-      } else if (data.payload.message === 'UserDeleteFailed'){
-        setUserDeleteFail(true)
+    dispatch(UserDeleteAccount({ uuid: localStorage.uuid })).then((data) => {
+      if (data.payload.message === "UserDeleteSuccess") {
+        setUserDeleteSuccess(true);
+        navigate("/");
+      } else if (data.payload.message === "UserDeleteFailed") {
+        setUserDeleteFail(true);
       }
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -207,16 +220,7 @@ const MyAccount = () => {
           />
         </div>
         <div className="pp">
-          <img
-            className="pp-img"
-            src={
-              userData.userData.avatar &&
-              userData.userData.avatar !== "noavatar"
-                ? `http://localhost:8009/UsersProfilePics/${userData.userData.username}/${userData.userData.avatar}`
-                : "http://localhost:8009/UsersProfilePics/default.png"
-            }
-            alt=""
-          />
+          <img className="pp-img" src={AvatarOnDisplay} alt="" />
         </div>
         <div className="ppActions">
           <label htmlFor="file-upload">
@@ -287,7 +291,7 @@ const MyAccount = () => {
                 className="newPassword-Input"
                 type="password"
                 name="newPassword"
-                id="newPassword"
+                id="CMnewPassword"
                 placeholder="Enter your new password"
                 onChange={(e) => {
                   setPassData({ ...PassData, newpass: e.currentTarget.value });
@@ -302,7 +306,11 @@ const MyAccount = () => {
             </div>
           </div>
           <div>
-            <StyledButton2 btnType="submit" btnText="Delete Account" onClick={handleDeleteAccountToggle}/>
+            <StyledButton2
+              btnType="submit"
+              btnText="Delete Account"
+              onClick={handleDeleteAccountToggle}
+            />
             <div
               className="deleteAccount"
               style={ToggleDeleteAccount ? {} : { display: "none" }}
@@ -310,8 +318,20 @@ const MyAccount = () => {
               <p>
                 Are you sure ? <br /> there is no going back !
               </p>
-              <button className="cancelActionDelete" onClick={() => {setToggleDeleteAccount(false)}}>Cancel</button>
-              <button className="confirmActionDelete" onClick={handleDeleteAccountConfirmation}>Yes, I'm Sure</button>
+              <button
+                className="cancelActionDelete"
+                onClick={() => {
+                  setToggleDeleteAccount(false);
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                className="confirmActionDelete"
+                onClick={handleDeleteAccountConfirmation}
+              >
+                Yes, I'm Sure
+              </button>
             </div>
           </div>
         </div>

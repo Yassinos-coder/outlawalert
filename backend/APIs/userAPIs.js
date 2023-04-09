@@ -94,6 +94,16 @@ userAPI.post("/user/newUser", async (req, res) => {
   }
 });
 
+userAPI.get('/user/GetUserData/:uuid', async(req, res) => {
+  let uuid = req.params.uuid
+  try {
+    const userData = await UserModel.findOne({_id: uuid})
+    res.send(userData)
+  } catch (err) {
+    console.error(`Error in GetUserData API ${err}`)
+  }
+})
+
 userAPI.post("/user/LogIn", async (req, res) => {
   let loginCreds = req.body;
   try {

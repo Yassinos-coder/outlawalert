@@ -20,6 +20,15 @@ export const LogIn = createAsyncThunk('/user/LogIn', async(logInCreds) => {
     }
 })
 
+export const GetUserData = createAsyncThunk('user/GetUserData', async({uuid}) => {
+    try {
+        const response = await AxiosConfig.get(`/user/GetUserData/${uuid}`)
+        return response.data
+    } catch (err) {
+        console.warn(`Error in GetUserData ${err}`)
+    }
+})
+
 export const ProfilePicUpdater = createAsyncThunk('user/ProfilePicUpdater', async({uuid, newPicture}) => {
     try {
         const response = await AxiosConfig.post(`/user/ProfilePictureUpdate/${uuid}`, newPicture)
@@ -65,7 +74,6 @@ export const UserDeleteAccount = createAsyncThunk('user/UserDeleteAccount', asyn
     }
 })
 
-
 const UserReducer = createSlice({
     name:'UserHandler',
     initialState : {
@@ -86,13 +94,23 @@ const UserReducer = createSlice({
                 state.status = 'rejected'
             })
             .addCase(LogIn.fulfilled, (state, action) => {
-                state.userData = action.payload
+                state.userData = action.payload.userData
                 state.status = 'accepted'
             })
             .addCase(LogIn.pending, (state) => {
                 state.status = 'pending'
             })
             .addCase(LogIn.rejected, (state ) => {
+                state.status = 'rejected'
+            })
+            .addCase(GetUserData.fulfilled, (state, action) => {
+                state.userData = action.payload
+                state.status = 'accepted'
+            })
+            .addCase(GetUserData.pending, (state) => {
+                state.status = 'pending'
+            })
+            .addCase(GetUserData.rejected, (state ) => {
                 state.status = 'rejected'
             })
             .addCase(ProfilePicUpdater.fulfilled, (state, action) => {
