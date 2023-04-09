@@ -72,7 +72,7 @@ userAPI.post("/user/newUser", async (req, res) => {
       );
       newUserData.password = hashedPassword;
       // bellow folder creation for each user
-      fs.mkdir(`./Uploads/${newUserData.username}/`, async (err) => {
+      fs.mkdir(`./Uploads/Users/${newUserData.username}/`, async (err) => {
         if (err) throw err;
         console.log("Directory created successfully");
         const addUser = new UserModel(newUserData);
@@ -128,7 +128,7 @@ userAPI.post("/user/LogIn", async (req, res) => {
   }
 });
 
-userAPI.post('/user/ProfilePictureUpdate/:uuid', async(req, res) => {
+userAPI.post('/user/ProfilePictureUpdate/:uuid', JWT, async(req, res) => {
   let userid = req.params.uuid
   let newPicture = req.files.newPicture
   try {
@@ -155,13 +155,71 @@ userAPI.post('/user/ProfilePictureUpdate/:uuid', async(req, res) => {
       }
 
     })
-
-
   } catch (error) {
     console.error(`Error in uploadPic API ${err}`)
     res.send({
       message: 'updateFailed'
     })
+  }
+})
+
+userAPI.post('/user/DeleteProfilePicture/:uuid', JWT, async(req, res) => {
+  let uuid = req.params.uuid
+  try {
+    const userData = await UserModel.findOne({_id : uuid})
+    await UserModel.updateOne({_id: uuid}, {avatar: 'noavatar'})
+    let path = `./Uploads/UsersProfilePics/${userData.username}/${userData.avatar}`
+    fs.rmSync(path, { recursive: true, force: true })
+    res.send({message:'deleteSuccess'})
+  } catch (err) {
+    console.error(`Error in DeleteProfilePicture ${err}`)
+    res.send({message:'deleteFail'})
+  }
+})
+
+userAPI.post('/user/EmailUpdate/:uuid', JWT, async(req, res) => {
+  let uuid = req.params.uuid
+  let newEmailData = req.body
+  try {
+    await UserModel.updateOne({_id : uuid}, {email: newEmailData.email})
+    res.send({message:'emailUpdateSuccess'})
+  } catch (err) {
+    console.error(`Error in EmailUpdate ${err}`)
+    res.send({message:'emailUpdateFail'})
+  }
+})
+
+userAPI.post('/user/PasswordUpdate/:uuid', async(req, res) => {
+  let uuid = req.params.uuid
+  let PassData = req.body
+  try {
+    console.log(PassData)
+    const userData = await UserModel.findOne({_id: uuid})
+    const result = bcrypt.compareSync(PassData.oldpass, userData.password)
+    if (result) {
+      const newHashedPass = bcrypt.hashSync(PassData.newpass, SaltRounds)
+      await UserModel.updateOne({_id: uuid}, {password: newHashedPass})
+      res.send({message:'passUpdateSuccess'})
+    } else if (!result) {
+      res.send({message:'oldPassWrong'})
+    }
+  } catch (err) {
+    console.error(`Error in PasswordUpdate API ${err}`)
+    res.send({message:'SomethingWentWrong'})
+  }
+})
+
+userAPI.post('/user/DeleteAccount/:uuid', async(req, res) => {
+  let uuid = req.params.uuid
+  try {
+    const userData = await UserModel.findOne({_id: uuid})
+    await UserModel.deleteOne({_id: uuid})
+    let path = `./Uploads/Users/${userData.username}`
+    fs.rmSync(path, { recursive: true, force: true })
+    res.send({message: 'UserDeleteSuccess'})
+  } catch (err) {
+    console.error(`Error in DeleteAccount ${err}`)
+    res.send({message: 'UserDeleteFailed'})
   }
 })
 

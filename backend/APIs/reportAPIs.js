@@ -37,7 +37,7 @@ reportAPI.post("/report/AddReport", JWT, async (req, res) => {
   }
 });
 
-reportAPI.post("/report/UploadMediaOfReports/:userid", async (req, res) => {
+reportAPI.post("/report/UploadMediaOfReports/:userid", JWT, async (req, res) => {
   let files = req.files.allfiles;
   let userid = req.params.userid;
   try {
