@@ -15,6 +15,24 @@
   overflow: hidden;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 0.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 1.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
 .btn:hover {
   color: black;
 }

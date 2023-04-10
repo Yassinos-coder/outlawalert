@@ -51,7 +51,7 @@ const SignUp = () => {
             <input type="text" required={true} name="cin" placeholder="CIN" onChange={(e) => {setNewSignUp({...newSignUp, cin: e.currentTarget.value})}}
             />
             <label htmlFor="dob">DOB</label>
-            <input type="text" required={true} name="dob" placeholder="DOB" onChange={(e) => {setNewSignUp({...newSignUp, dob: e.currentTarget.value})}}
+            <input type="date" required={true} name="dob" placeholder="DOB" onChange={(e) => {setNewSignUp({...newSignUp, dob: e.currentTarget.value})}}
             />
             <label htmlFor="addr">Addresse</label>
             <input type="text" required={true} name="addr" placeholder="Addresse" onChange={(e) => {setNewSignUp({...newSignUp, address: e.currentTarget.value})}}

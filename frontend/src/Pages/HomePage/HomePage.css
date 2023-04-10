@@ -1,10 +1,11 @@
+/* Mobile Devices */
 @media (max-width: 767px) {
   .homepage {
     width: 100%;
     height: 100vh;
   }
 
-  .logo {
+  .logoHomePage {
     position: relative;
     margin: auto;
     max-width: 250px;
@@ -13,7 +14,7 @@
     top: 5%;
   }
 
-  .logo-hp {
+  .logoHomePage-hp {
     position: relative;
     width: 100%;
     min-width: 100%;
@@ -27,21 +28,23 @@
   }
 
   .h2-hp {
+    position: relative;
     text-align: center;
+    top: 50px;
   }
 
   .btnActions {
     max-width: 80%;
     position: relative;
     display: flex;
-    padding-top: 4%;
-    left: 10%;
+    top: 60px;
+    left: 11%;
   }
 
   .moreTxt {
     position: relative;
     margin: auto;
-    padding-top: 10%;
+    top: 80px;
   }
 
   .moreTxt > p {
@@ -53,7 +56,7 @@
     position: relative;
     width: 100%;
     height: 70px;
-    top: 52%;
+    top: 395px;
   }
 
   .h3-f-hp {
@@ -102,5 +105,458 @@
   .status1 {
     min-width: 100px;
     max-width: 100px;
+  }
+}
+
+/* For Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .homepage {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoHomePage {
+    position: relative;
+    margin: auto;
+    max-width: 400px;
+    width: 400px;
+    height: 50px;
+    top: 90px;
+  }
+
+  .logoHomePage-hp {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .actions-hp {
+    position: relative;
+    margin: auto;
+    top: 50%;
+  }
+
+  .h2-hp {
+    position: relative;
+    top: -10px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .btnActions {
+    max-width: 90%;
+    position: relative;
+    display: flex;
+    top: 150px;
+    left: 200px;
+  }
+
+  .moreTxt {
+    position: relative;
+    margin: auto;
+    top: -110px;
+  }
+
+  .moreTxt > p {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  .footer {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 830px;
+    font-size: 1.5rem;
+  }
+
+  .h3-f-hp {
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .h3-f-hp > a {
+    text-decoration: none;
+    color: red;
+  }
+
+  .h3-f-hp > a:hover {
+    cursor: pointer;
+  }
+
+  .alert {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .status {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 1.5rem;
+  }
+
+  .status1,
+  .status2,
+  .status3 {
+    display: inline;
+    width: 250px;
+    max-width: 250px;
+  }
+  .status1 {
+    width: 250px;
+    max-width: 250px;
+  }
+}
+
+
+/* For Laptops & desktops */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .homepage {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoHomePage {
+    position: relative;
+    margin: auto;
+    max-width: 200px;
+    width: 200px;
+    height: 50px;
+    top: 90px;
+  }
+
+  .logoHomePage-hp {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .actions-hp {
+    position: relative;
+    margin: auto;
+    top: 50%;
+  }
+
+  .h2-hp {
+    position: relative;
+    top: -55px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .btnActions {
+    max-width: 90%;
+    position: relative;
+    display: flex;
+    top: 100px;
+    left: 490px;
+  }
+
+  .moreTxt {
+    position: relative;
+    margin: auto;
+    top: -110px;
+  }
+
+  .moreTxt > p {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  .footer {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 408px;
+    font-size: 1.5rem;
+  }
+
+  .h3-f-hp {
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .h3-f-hp > a {
+    text-decoration: none;
+    color: red;
+  }
+
+  .h3-f-hp > a:hover {
+    cursor: pointer;
+  }
+
+  .alert {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .status {
+    position: absolute;
+    top: 5px;
+    left: 300px;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 1.5rem;
+  }
+
+  .status1,
+  .status2,
+  .status3 {
+    display: inline;
+    width: 250px;
+    max-width: 250px;
+  }
+  .status1 {
+    width: 250px;
+    max-width: 250px;
+  }
+}
+
+/* For Tablets */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .homepage {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoHomePage {
+    position: relative;
+    margin: auto;
+    max-width: 200px;
+    width: 200px;
+    height: 50px;
+    top: 90px;
+  }
+
+  .logoHomePage-hp {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .actions-hp {
+    position: relative;
+    margin: auto;
+    top: 50%;
+  }
+
+  .h2-hp {
+    position: relative;
+    top: -55px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .btnActions {
+    max-width: 90%;
+    position: relative;
+    display: flex;
+    top: 100px;
+    left: 490px;
+  }
+
+  .moreTxt {
+    position: relative;
+    margin: auto;
+    top: -110px;
+  }
+
+  .moreTxt > p {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  .footer {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 408px;
+    font-size: 1.5rem;
+  }
+
+  .h3-f-hp {
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .h3-f-hp > a {
+    text-decoration: none;
+    color: red;
+  }
+
+  .h3-f-hp > a:hover {
+    cursor: pointer;
+  }
+
+  .alert {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .status {
+    position: absolute;
+    top: 5px;
+    left: 300px;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 1.5rem;
+  }
+
+  .status1,
+  .status2,
+  .status3 {
+    display: inline;
+    width: 250px;
+    max-width: 250px;
+  }
+  .status1 {
+    width: 250px;
+    max-width: 250px;
+  }
+}
+
+/* For Tablets */
+@media (min-width: 1440px) {
+  .homepage {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoHomePage {
+    position: relative;
+    margin: auto;
+    max-width: 300px;
+    width: 300px;
+    height: 50px;
+    top: 90px;
+  }
+
+  .logoHomePage-hp {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .actions-hp {
+    position: relative;
+    margin: auto;
+    top: 50%;
+  }
+
+  .h2-hp {
+    position: relative;
+    top: -50px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .btnActions {
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    top: 120px;
+    left: 800px;
+  }
+
+  .moreTxt {
+    position: relative;
+    margin: auto;
+    top: -80px;
+  }
+
+  .moreTxt > p {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+
+  .footer {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    top: 641px;
+    font-size: 1.5rem;
+  }
+
+  .h3-f-hp {
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .h3-f-hp > a {
+    text-decoration: none;
+    color: red;
+  }
+
+  .h3-f-hp > a:hover {
+    cursor: pointer;
+  }
+
+  .alert {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .status {
+    position: absolute;
+    top: 5px;
+    left: 590px;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 1.5rem;
+  }
+
+  .status1,
+  .status2,
+  .status3 {
+    display: inline;
+    width: 250px;
+    max-width: 250px;
+  }
+  .status1 {
+    width: 250px;
+    max-width: 250px;
   }
 }

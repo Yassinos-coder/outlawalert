@@ -115,8 +115,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="logo">
-        <img className="logo-hp" src={logo} alt="Outlaw Alert System" />
+      <div className="logoHomePage">
+        <img className="logoHomePage-hp" src={logo} alt="Outlaw Alert System" />
       </div>
       <div className="actions-hp">
         <h2 className="h2-hp">Outlaw Alert System</h2>
