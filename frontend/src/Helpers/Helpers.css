@@ -33,6 +33,60 @@
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 1.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 1.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1080px) and (max-width: 1439px) {
+  .btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 1.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1440px) {
+  .btn {
+    width: 6.5em;
+    height: 2.3em;
+    margin: 1.5em;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
 .btn:hover {
   color: black;
 }

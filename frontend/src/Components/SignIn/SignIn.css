@@ -1,59 +1,326 @@
-.signin {
-  width: 100%;
+/* For Mobile Devices */
+@media (max-width: 767px) {
+  .signin {
+    width: 100%;
+  }
+
+  .logoSignin {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    padding-top: 5%;
+  }
+
+  .logoSignin-si {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .login-box {
+    position: relative;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 80%;
+    height: 250px;
+  }
+
+  .userBox {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    top: 10%;
+  }
+
+  .labels-login {
+    display: block;
+    font-weight: 900;
+    margin-top: 10px;
+  }
+
+  .input-login {
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+  }
+
+  .p-fp {
+    padding-top: 5%;
+    font-size: 15px;
+  }
+
+  .p-fp > a {
+    text-decoration: none;
+    color: red;
+  }
 }
 
-.logo {
-  position: relative;
-  margin: auto;
-  width: 200px;
-  padding-top: 5%;
+/* For Tablets */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .signin {
+    width: 100%;
+  }
+
+  .logoSignin {
+    position: relative;
+    margin: auto;
+    width: 400px;
+    padding-top: 5%;
+  }
+
+  .logoSignin-si {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .login-box {
+    position: relative;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    top: 50px;
+  }
+
+  .userBox {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    top: 10%;
+  }
+
+  .labels-login {
+    display: block;
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .input-login {
+    border-radius: 8px;
+    border: none;
+    font-size: 19px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+  }
+
+  .p-fp {
+    padding-left: 20px;
+    font-size: 20px;
+  }
+
+  .p-fp > a {
+    text-decoration: none;
+    color: red;
+  }
 }
 
-.logo-si {
-  position: relative;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
+
+/* Small Laptops  */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .signin {
+    width: 100%;
+  }
+
+  .logoSignin {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    padding-top: 5%;
+  }
+
+  .logoSignin-si {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .login-box {
+    position: relative;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    top: 50px;
+  }
+
+  .userBox {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    top: 10%;
+  }
+
+  .labels-login {
+    display: block;
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .input-login {
+    border-radius: 8px;
+    border: none;
+    font-size: 19px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+  }
+
+  .p-fp {
+    padding-left: 20px;
+    font-size: 20px;
+    position: relative;
+    top: -15px;
+  }
+
+  .p-fp > a {
+    text-decoration: none;
+    color: red;
+  }
 }
 
-.login-box {
-  position: relative;
-  margin: auto;
-  background-color: rgb(0, 0, 0,0.5);
-  border-radius: 10px;
-  width: 80%;
-  height: 250px;
-  margin-top: 65%;
+/* Small Laptops  */
+@media (min-width: 1080px) and (max-width: 1439px) {
+  .signin {
+    width: 100%;
+  }
+
+  .logoSignin {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    padding-top: 5%;
+  }
+
+  .logoSignin-si {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .login-box {
+    position: relative;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    top: 50px;
+  }
+
+  .userBox {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    top: 10%;
+  }
+
+  .labels-login {
+    display: block;
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .input-login {
+    border-radius: 8px;
+    border: none;
+    font-size: 19px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+  }
+
+  .p-fp {
+    padding-left: 20px;
+    font-size: 20px;
+    position: relative;
+    top: -15px;
+  }
+
+  .p-fp > a {
+    text-decoration: none;
+    color: red;
+  }
 }
 
-.userBox {
-  position: relative;
-  margin: auto;
-  width: 80%;
-  top: 10%;
-}
+/* Large Laptops & Desktops */
 
-.labels-login {
-  display: block;
-  font-weight: 900;
-  margin-top: 10px;
-}
+@media (min-width: 1440px) {
+  .signin {
+    width: 100%;
+  }
 
-.input-login {
-  border-radius: 8px;
-  border: none;
-  font-size: 15px;
-  width: 100%;
-  height: 30px;
-  padding-left: 10px;
-}
+  .logoSignin {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    padding-top: 5%;
+  }
 
-.p-fp {
-  padding-top: 5%;
-  font-size: 15px;
-}
+  .logoSignin-si {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
 
-.p-fp > a {
-  text-decoration: none;
-  color: red;
+  .login-box {
+    position: relative;
+    margin: auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    top: 50px;
+  }
+
+  .userBox {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    top: 10%;
+  }
+
+  .labels-login {
+    display: block;
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .input-login {
+    border-radius: 8px;
+    border: none;
+    font-size: 19px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+  }
+
+  .p-fp {
+    padding-left: 20px;
+    font-size: 20px;
+    position: relative;
+    top: -15px;
+  }
+
+  .p-fp > a {
+    text-decoration: none;
+    color: red;
+  }
 }

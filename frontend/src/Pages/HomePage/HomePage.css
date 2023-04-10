@@ -489,13 +489,13 @@
     position: relative;
     display: flex;
     top: 120px;
-    left: 800px;
+    left: 725px;
   }
 
   .moreTxt {
     position: relative;
     margin: auto;
-    top: -80px;
+    top: -150px;
   }
 
   .moreTxt > p {
@@ -508,7 +508,7 @@
     position: relative;
     width: 100%;
     height: 70px;
-    top: 641px;
+    top: 580px;
     font-size: 1.5rem;
   }
 

@@ -50,8 +50,8 @@ const SignIn = () => {
             <AlertPopUp alertTitle='Login Error' alertVisible={NoUserError === true ? true : false}  alertMsg="This User doesn't exist" alertType='warning' />
             <AlertPopUp alertTitle='Login Error' alertVisible={ErrorLogin === true ? true : false}  alertMsg="Wrong Password, Try Again !" alertType='danger' />
       </div>
-        <div className="logo">
-          <img className="logo-si" src={logo} alt="" />
+        <div className="logoSignin">
+          <img className="logoSignin-si" src={logo} alt="" />
         </div>
         <div className="login-box">
           <div className="userBox">
