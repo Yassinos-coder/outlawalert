@@ -1,85 +1,86 @@
-.homepage {
+@media (max-width: 767px) {
+  .homepage {
     width: 100%;
     height: 100vh;
-}
+  }
 
-.logo {
+  .logo {
     position: relative;
     margin: auto;
     max-width: 250px;
     width: 250px;
     height: 50px;
     top: 5%;
-}
+  }
 
-.logo-hp {
+  .logo-hp {
     position: relative;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-}
+  }
 
-.actions-hp {
+  .actions-hp {
     position: relative;
     margin: auto;
     top: 40%;
-}
+  }
 
-.h2-hp {
+  .h2-hp {
     text-align: center;
-}
+  }
 
-.btnActions {
+  .btnActions {
     max-width: 80%;
     position: relative;
     display: flex;
     padding-top: 4%;
     left: 10%;
-}
+  }
 
-.moreTxt {
+  .moreTxt {
     position: relative;
     margin: auto;
     padding-top: 10%;
-}
+  }
 
-.moreTxt > p {
+  .moreTxt > p {
     text-align: center;
-}
+  }
 
-.footer {
+  .footer {
     background-color: black;
     position: relative;
     width: 100%;
     height: 70px;
     top: 52%;
-}
+  }
 
-.h3-f-hp {
+  .h3-f-hp {
     text-align: center;
     line-height: 60px;
-}
+  }
 
-.h3-f-hp > a {
+  .h3-f-hp > a {
     text-decoration: none;
     color: red;
-}
+  }
 
-.h3-f-hp > a:hover {
+  .h3-f-hp > a:hover {
     cursor: pointer;
-}
+  }
 
-.alert {
+  .alert {
     position: absolute;
     top: 5%;
     left: 15%;
-}
+  }
 
-.header {
+  .header {
     width: 100%;
-}
+  }
 
-.status {
+  .status {
     position: absolute;
     top: 5px;
     left: 20px;
@@ -89,15 +90,17 @@
     min-width: 100%;
     flex-wrap: nowrap;
     gap: 5px;
-}
+  }
 
-
-.status1 , .status2, .status3 {
+  .status1,
+  .status2,
+  .status3 {
     display: inline;
     min-width: 130px;
     max-width: 130px;
-}
-.status1 {
+  }
+  .status1 {
     min-width: 100px;
     max-width: 100px;
+  }
 }
