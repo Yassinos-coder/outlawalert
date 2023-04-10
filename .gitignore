@@ -3,3 +3,4 @@ backend/node_modules
 backend/.env
 backend/uploads
 todos.txt
+starter.bat
