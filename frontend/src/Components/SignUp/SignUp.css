@@ -1,25 +1,50 @@
-.signup {
+@media (max-width: 767px) {
+  .signup {
     width: 100%;
-}
+    height: 100vh;
+  }
 
-.signUp {
+  .logoSignup {
+    display: none;
+    position: relative;
+    margin: auto;
+    width: 300px;
+    padding-top: 5%;
+  }
+
+  .logoSignup-su {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .red-Notice {
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+  .signUp {
     background-color: rgb(0, 0, 0);
     margin: auto;
     border-radius: 10px;
     max-width: 90%;
     min-width: 80%;
     margin-top: 10%;
-}
+  }
 
-.inputs {
+  .inputs {
     position: relative;
     margin: auto;
     width: 70%;
     padding-top: 2%;
     padding-bottom: 5%;
-}
+  }
 
-.inputs > input {
+  .inputs > .box1 > input,
+  .inputs > .box2 > input {
     display: block;
     padding-left: 10px;
     margin-bottom: 10px;
@@ -29,11 +54,316 @@
     border: none;
     border-radius: 8px;
     outline-color: red;
-} 
+  }
 
-.btnSubmit {
+  .btnSubmit {
     position: relative;
     margin: auto;
     max-width: 35%;
     min-width: 35%;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .signup {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoSignup {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    padding-top: 5%;
+  }
+
+  .logoSignup-su {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .red-Notice {
+    color: red;
+    font-size: 1.7rem;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+  .signUp {
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 10px;
+    max-width: 90%;
+    min-width: 80%;
+    margin-top: 5%;
+  }
+
+  .inputs {
+    position: relative;
+    margin: auto;
+    width: 70%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    font-size: 20px;
+  }
+
+  .inputs > .box1 > input,
+  .inputs > .box2 > input {
+    display: block;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    outline-color: red;
+  }
+
+  .btnSubmit {
+    position: relative;
+    margin: auto;
+    max-width: 35%;
+    min-width: 35%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .signup {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoSignup {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    padding-top: 1%;
+  }
+
+  .logoSignup-su {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .red-Notice {
+    color: red;
+    font-size: 1.7rem;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+  .signUp {
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 10px;
+    max-width: 90%;
+    min-width: 80%;
+    margin-top: 1%;
+    height: 420px;
+  }
+
+  .inputs {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 70%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    font-size: 20px;
+    gap: 100px;
+  }
+
+  .inputs > .box1 > input {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    outline-color: red;
+  }
+  .inputs > .box2 > input {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    outline-color: red;
+  }
+
+  .btnSubmit {
+    position: relative;
+    margin: auto;
+    max-width: 35%;
+    min-width: 35%;
+    top: -100px;
+    left: 120px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .signup {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .logoSignup {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    padding-top: 1%;
+  }
+
+  .logoSignup-su {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .red-Notice {
+    color: red;
+    font-size: 1.7rem;
+    text-align: center;
+    padding-top: 2%;
+  }
+
+  .signUp {
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 10px;
+    max-width: 90%;
+    min-width: 80%;
+    margin-top: 1%;
+    height: 420px;
+  }
+
+  .inputs {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 70%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    font-size: 20px;
+    gap: 100px;
+  }
+
+  .inputs > .box1 > input {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    outline-color: red;
+  }
+  .inputs > .box2 > input {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    outline-color: red;
+  }
+
+  .btnSubmit {
+    position: relative;
+    margin: auto;
+    max-width: 35%;
+    min-width: 35%;
+    top: -100px;
+    left: 120px;
+  }
+}
+
+@media (min-width: 1440px) {
+    .signup {
+      width: 100%;
+      height: 100vh;
+    }
+  
+    .logoSignup {
+      position: relative;
+      margin: auto;
+      width: 200px;
+      padding-top: 1%;
+    }
+  
+    .logoSignup-su {
+      position: relative;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .red-Notice {
+      color: red;
+      font-size: 1.7rem;
+      text-align: center;
+      padding-top: 2%;
+    }
+  
+    .signUp {
+      background-color: rgb(0, 0, 0);
+      margin: auto;
+      border-radius: 10px;
+      max-width: 90%;
+      min-width: 80%;
+      margin-top: 1%;
+      height: 450px;
+    }
+  
+    .inputs {
+      display: flex;
+      position: relative;
+      margin: auto;
+      width: 70%;
+      padding-top: 2%;
+      padding-bottom: 5%;
+      font-size: 20px;
+      gap: 100px;
+    }
+  
+    .inputs > .box1 > input {
+      padding-left: 10px;
+      margin-bottom: 10px;
+      font-size: 17px;
+      width: 100%;
+      height: 30px;
+      border: none;
+      border-radius: 8px;
+      outline-color: red;
+    }
+    .inputs > .box2 > input {
+      padding-left: 10px;
+      margin-bottom: 10px;
+      font-size: 17px;
+      width: 100%;
+      height: 30px;
+      border: none;
+      border-radius: 8px;
+      outline-color: red;
+    }
+  
+    .btnSubmit {
+      position: relative;
+      margin: auto;
+      max-width: 35%;
+      min-width: 35%;
+      top: -100px;
+      left: 240px;
+    }
+  }
+  
