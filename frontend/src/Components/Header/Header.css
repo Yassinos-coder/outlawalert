@@ -1,43 +1,279 @@
-.header-homedash {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  background-color: gray;
+@media (max-width: 767px) {
+  .header-homedash {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+  }
+
+  .headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .item1 {
+    border-right: 1px black solid;
+    height: 60px;
+    width: 70px;
+  }
+
+  .faBarsHomeDash:hover {
+    color: orangered;
+  }
+
+  .item2 {
+    width: 250px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .h3-homedash-item2 {
+    line-height: 55px;
+    font-size: 1.5rem;
+  }
+
+  .item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 60px;
+  }
+
+  .faLogOut:hover {
+    color: red;
+  }
 }
 
-.headerMenu {
-  display: flex;
-  display: flex;
-  flex-wrap: nowrap;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-homedash {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+  }
+
+  .headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .item1 {
+    border-right: 1px black solid;
+    height: 80px;
+    width: 150px;
+  }
+
+  .faBarsHomeDash {
+    font-size: 3rem;
+    padding-top: 15px;
+    padding-left: 50px;
+  }
+
+  .faBarsHomeDash:hover {
+    color: orangered;
+  }
+
+  .item2 {
+    width: 500px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .h3-homedash-item2 {
+    font-size: 2.5rem;
+    padding-top: 15px;
+  }
+
+  .item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 80px;
+  }
+
+  .faLogOut {
+    font-size: 3rem;
+    padding-top: 15px;
+    padding-left: 50px;
+  }
+
+  .faLogOut:hover {
+    color: red;
+  }
 }
 
-.item1 {
-  border-right: 1px black solid;
-  height: 60px;
-  width: 70px;
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header-homedash {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+  }
+
+  .headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .item1 {
+    border-right: 1px black solid;
+    height: 60px;
+    width: 250px;
+  }
+
+  .faBarsHomeDash {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faBarsHomeDash:hover {
+    color: orangered;
+  }
+
+  .item2 {
+    width: 800px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .h3-homedash-item2 {
+    font-size: 2.5rem;
+    padding-top: 5px;
+  }
+
+  .item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 60px;
+  }
+
+  .faLogOut {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faLogOut:hover {
+    color: red;
+  }
 }
 
-.faBarsHomeDash:hover {
-  color: orangered;
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .header-homedash {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+  }
+
+  .headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .item1 {
+    border-right: 1px black solid;
+    height: 60px;
+    width: 250px;
+  }
+
+  .faBarsHomeDash {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faBarsHomeDash:hover {
+    color: orangered;
+  }
+
+  .item2 {
+    width: 800px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .h3-homedash-item2 {
+    font-size: 2.5rem;
+    padding-top: 5px;
+  }
+
+  .item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 60px;
+  }
+
+  .faLogOut {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faLogOut:hover {
+    color: red;
+  }
 }
 
-.item2 {
-  width: 250px;
-  height: 60px;
-  text-align: center;
-}
 
-.h3-homedash-item2 {
-  line-height: 55px;
-  font-size: 1.5rem;
-}
+@media (min-width: 1440px) {
+  .header-homedash {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: gray;
+  }
 
-.item3 {
-  border-left: 1px black solid;
-  width: 70px;
-  height: 60px;
-}
+  .headerMenu {
+    display: flex;
+    display: flex;
+    flex-wrap: nowrap;
+  }
 
-.faLogOut:hover {
-  color: red;
+  .item1 {
+    border-right: 1px black solid;
+    height: 60px;
+    width: 250px;
+  }
+
+  .faBarsHomeDash {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faBarsHomeDash:hover {
+    color: orangered;
+  }
+
+  .item2 {
+    width: 1450px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .h3-homedash-item2 {
+    font-size: 2.5rem;
+    padding-top: 5px;
+  }
+
+  .item3 {
+    border-left: 1px black solid;
+    width: 70px;
+    height: 60px;
+  }
+
+  .faLogOut {
+    font-size: 3rem;
+    padding-top: 5px;
+    padding-left: 100px;
+  }
+
+  .faLogOut:hover {
+    color: red;
+  }
 }

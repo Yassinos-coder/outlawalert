@@ -24,11 +24,6 @@ const Header = () => {
         <div className="headerMenu">
           <div className="item1">
             <FontAwesomeIcon
-              style={{
-                fontSize: "2.5rem",
-                paddingTop: "10px",
-                paddingLeft: "15px",
-              }}
               className='faBarsHomeDash'
               icon={faBars}
               onClick={handleMenuToggle}
@@ -43,11 +38,6 @@ const Header = () => {
             <FontAwesomeIcon
               className="faLogOut"
               onClick={handleLogOut}
-              style={{
-                fontSize: "2.5rem",
-                paddingTop: "10px",
-                paddingLeft: "15px",
-              }}
               icon={faRightFromBracket}
             />
           </div>

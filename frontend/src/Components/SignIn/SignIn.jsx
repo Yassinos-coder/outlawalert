@@ -63,7 +63,7 @@ const SignIn = () => {
             <input className="input-login" type="password" required name="password" placeholder="Entrez votre Password" onChange={(e) => {setNewSignIn({...newSignIn, password: e.currentTarget.value})}}/>
           </div>
           <div className="userBox">
-            <StyledButton btnType="submit"  btnText='Sign In' overrideStyle={{left:'20%', marginTop:'9%'}} onClick={handleLogin} />
+            <StyledButton btnType="submit"  btnText='Sign In' onClick={handleLogin} />
           </div>
           <div className="userBox">
             <p className="p-fp">Forgot your password ? <Link to="/resetPassword">Reset Password</Link></p>

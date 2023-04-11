@@ -221,7 +221,6 @@
   }
 }
 
-
 /* For Laptops & desktops */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .homepage {
@@ -235,7 +234,7 @@
     max-width: 200px;
     width: 200px;
     height: 50px;
-    top: 90px;
+    top: 70px;
   }
 
   .logoHomePage-hp {
@@ -253,7 +252,7 @@
 
   .h2-hp {
     position: relative;
-    top: -55px;
+    top: -90px;
     text-align: center;
     font-size: 2.5rem;
   }
@@ -262,19 +261,19 @@
     max-width: 90%;
     position: relative;
     display: flex;
-    top: 100px;
-    left: 490px;
+    top: 50px;
+    left: 460px;
   }
 
   .moreTxt {
     position: relative;
     margin: auto;
-    top: -110px;
+    top: -190px;
   }
 
   .moreTxt > p {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .footer {
@@ -282,7 +281,7 @@
     position: relative;
     width: 100%;
     height: 70px;
-    top: 408px;
+    top: 380px;
     font-size: 1.5rem;
   }
 
@@ -348,7 +347,7 @@
     max-width: 200px;
     width: 200px;
     height: 50px;
-    top: 90px;
+    top: 70px;
   }
 
   .logoHomePage-hp {
@@ -366,7 +365,7 @@
 
   .h2-hp {
     position: relative;
-    top: -55px;
+    top: -90px;
     text-align: center;
     font-size: 2.5rem;
   }
@@ -375,19 +374,19 @@
     max-width: 90%;
     position: relative;
     display: flex;
-    top: 100px;
-    left: 490px;
+    top: 50px;
+    left: 460px;
   }
 
   .moreTxt {
     position: relative;
     margin: auto;
-    top: -110px;
+    top: -190px;
   }
 
   .moreTxt > p {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .footer {
@@ -395,7 +394,7 @@
     position: relative;
     width: 100%;
     height: 70px;
-    top: 408px;
+    top: 380px;
     font-size: 1.5rem;
   }
 

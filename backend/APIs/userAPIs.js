@@ -12,31 +12,31 @@ const axios = require('axios');
 
 
 const newLoginNoticeOnEmail = async (emailRecipient) => {
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: "smp.newpass@gmail.com",
-      pass: "tisomxygifswljec",
-    },
-  });
-  const ipaddress = await axios.get('https://api.ipify.org', (req, res) => {return res})
-  const ipInfo = await axios.get(`http://api.ipstack.com/${ipaddress.data}?access_key=a2189b78e421fd72cd5cd1b44a528e15`, (req, res) => {return res})
+  // let transporter = nodemailer.createTransport({
+  //   host: "smtp.gmail.com",
+  //   port: 465,
+  //   secure: true,
+  //   auth: {
+  //     user: "smp.newpass@gmail.com",
+  //     pass: "vxojtffcwppgiehk",
+  //   },
+  // });
+  // const ipaddress = await axios.get('https://api.ipify.org', (req, res) => {return res})
+  // const ipInfo = await axios.get(`http://api.ipstack.com/${ipaddress.data}?access_key=a2189b78e421fd72cd5cd1b44a528e15`, (req, res) => {return res})
 
-  // send email using the transporter
-  let mailOptions = {
-    from: "smp.newpass@gmail.com",
-    to: emailRecipient,
-    subject: "New Connection Detected ⚠️!",
-    html: `<h1 style='background-color: red;border-radius: 10px; margin:auto; text-align: center; max-width: 500px;'>New Connection Detected</h1><h3>We detected a new login from this IP Address: ${ipInfo.data.ip} located in ${ipInfo.data.city}, ${ipInfo.data.region_name}, ${ipInfo.data.country_name} ${ipInfo.data.location.country_flag_emoji}, ${ipInfo.data.continent_name} </h3>`
-  };
+  // // send email using the transporter
+  // let mailOptions = {
+  //   from: "smp.newpass@gmail.com",
+  //   to: emailRecipient,
+  //   subject: "New Connection Detected ⚠️!",
+  //   html: `<h1 style='background-color: red;border-radius: 10px; margin:auto; text-align: center; max-width: 500px;'>New Connection Detected</h1><h3>We detected a new login from this IP Address: ${ipInfo.data.ip} located in ${ipInfo.data.city}, ${ipInfo.data.region_name}, ${ipInfo.data.country_name} ${ipInfo.data.location.country_flag_emoji}, ${ipInfo.data.continent_name} </h3>`
+  // };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-    }
-  });
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     console.log(error);
+  //   }
+  // });
 };
 
 

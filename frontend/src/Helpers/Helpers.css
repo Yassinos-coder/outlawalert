@@ -42,7 +42,7 @@
     color: white;
     border: none;
     border-radius: 0.625em;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     position: relative;
@@ -60,7 +60,7 @@
     color: white;
     border: none;
     border-radius: 0.625em;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     position: relative;
@@ -210,4 +210,67 @@
 
 .btn2:hover {
   background: #2b2a2a;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn2 {
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    font-size: 2.2rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 70px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 5rem;
+    color: #ddd;
+    border: none;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    background: #000000;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .btn2 {
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    font-size: 2.2rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 70px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 5rem;
+    color: #ddd;
+    border: none;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    background: #000000;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .btn2 {
+    font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
+    font-size: 1.7rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 60px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 5rem;
+    color: #ddd;
+    border: none;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    box-shadow: 0 0.5rem 1rem rgba(143, 142, 142, 0.15) !important;
+    background: #000000;
+    margin-bottom: 15px;
+  }
 }
