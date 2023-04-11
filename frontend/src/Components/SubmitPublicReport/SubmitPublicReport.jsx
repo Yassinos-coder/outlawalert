@@ -7,7 +7,7 @@ import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import AddReportModal from "../../Modals/AddReportModal";
 import { addReport, uploadMediaAttachement } from "../../Redux/ReportReducer";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const SubmitPublicReport = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const SubmitPublicReport = () => {
   const [fileInfo, setFileInfo] = useState();
   const [isReportSendingSuccess, setReportSendingSuccess] = useState(false);
   const [ReportSendingFailed, setReportSendingFailed] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -56,14 +56,13 @@ const SubmitPublicReport = () => {
         if (data.payload === "uploadSuccess") {
           setReportSendingSuccess(true);
           setTimeout(() => {
-            navigate(-1)
+            navigate(-1);
           }, 2000);
         } else if (data.payload === "failed") {
           setReportSendingFailed(true);
         }
       });
-    },1000)
-    
+    }, 1000);
   };
 
   return (
@@ -93,124 +92,132 @@ const SubmitPublicReport = () => {
           <p>Public Report Submittion</p>
         </div>
         <div className="reportSubmittion">
-          <label htmlFor="reportTitle" className="reportLables">
-            - Report Title :
-          </label>
-          <input
-            type="text"
-            id="reportTitle"
-            className="reportInputs"
-            placeholder="Enter Report Title"
-            onChange={(e) => {
-              const currentDate = new Date();
-              const formattedDate = currentDate.toLocaleString();
-              setNewReport({
-                ...newReport,
-                reporter: localStorage.uuid,
-                reportTitle: e.currentTarget.value,
-                isReportAnonyme: false,
-                reportDate: formattedDate,
-              });
-            }}
-          />
-          <label htmlFor="reportSubject" className="reportLables">
-            - What Type of reports ?{" "}
-          </label>
-          <select
-            name="reportSubject"
-            className="reportInputs"
-            id="reportSubject"
-            onChange={(event) => {
-              handleOptionReportSubject(event);
-            }}
-          >
-            <option value="default">Choose from below</option>
-            <option value="physicalAssault">Physical Assault</option>
-            <option value="moralAssault">Moral Assault</option>
-            <option value="publicAssault">Public Assault</option>
-            <option value="publicDisrespect">Public Disrespect</option>
-            <option value="other">Other</option>
-          </select>
-          <input
-            type="text"
-            className="reportInputs"
-            style={customReportSubject === false ? { display: "none" } : {}}
-            placeholder="Enter Subject of report"
-            onChange={(e) => {
-              setNewReport({
-                ...newReport,
-                reportSubject: e.currentTarget.value,
-              });
-            }}
-          />
-          <label htmlFor="reportMessage" className="reportLables">
-            - Report Message :
-          </label>
-          <textarea
-            type="text"
-            id="reportMessage"
-            className="reportInputs"
-            placeholder="Enter Report Message"
-            onChange={(e) => {
-              setNewReport({
-                ...newReport,
-                reportMessage: e.currentTarget.value,
-              });
-            }}
-          />
-          <label htmlFor="incidentLocation" className="reportLables">
-            - Incident Location :
-          </label>
-          <span>
+          <div className="box1RSP">
+            <label htmlFor="reportTitle" className="reportLables">
+              - Report Title :
+            </label>
             <input
               type="text"
-              value={locationCoordAfterFa === '' ? '' : locationCoordAfterFa}
-              id="incidentLocation"
-              className="reportInputs incidentLocation"
-              placeholder="Enter Incident Location"
+              id="reportTitle"
+              className="reportInputs"
+              placeholder="Enter Report Title"
+              onChange={(e) => {
+                const currentDate = new Date();
+                const formattedDate = currentDate.toLocaleString();
+                setNewReport({
+                  ...newReport,
+                  reporter: localStorage.uuid,
+                  reportTitle: e.currentTarget.value,
+                  isReportAnonyme: false,
+                  reportDate: formattedDate,
+                });
+              }}
+            />
+            <label htmlFor="reportMessage" className="reportLables">
+              - Report Message :
+            </label>
+            <textarea
+              type="text"
+              id="reportMessage"
+              className="reportInputs"
+              placeholder="Enter Report Message"
               onChange={(e) => {
                 setNewReport({
                   ...newReport,
-                  reportLocationCoords: e.currentTarget.value,
+                  reportMessage: e.currentTarget.value,
                 });
               }}
             />
-            <FontAwesomeIcon
-              className="faLocation"
-              icon={faLocationCrosshairs}
-              onClick={(e) => {
-                navigator.geolocation.getCurrentPosition((currentPosition) => {
+            <label htmlFor="uploads" className="reportLables">
+              - Upload Pictures or Videos :
+            </label>
+            <input
+              type="file"
+              id="uploads"
+              accept=".png,.jpg,.jpeg,.mp4,.heic,.webp"
+              className="reportInputs-file reportInputs"
+              title="Upload Pictures or Videos of Incident"
+              onChange={(e) => {
+                setFileInfo(e.currentTarget.files);
+              }}
+              multiple
+            />
+          </div>
+          <div className="box2RSP">
+            <label htmlFor="reportSubject" className="reportLables">
+              - What Type of reports ?{" "}
+            </label>
+            <select
+              name="reportSubject"
+              className="reportInputs"
+              id="reportSubject"
+              onChange={(event) => {
+                handleOptionReportSubject(event);
+              }}
+            >
+              <option value="default">Choose from below</option>
+              <option value="physicalAssault">Physical Assault</option>
+              <option value="moralAssault">Moral Assault</option>
+              <option value="publicAssault">Public Assault</option>
+              <option value="publicDisrespect">Public Disrespect</option>
+              <option value="other">Other</option>
+            </select>
+            <input
+              type="text"
+              className="reportInputs"
+              style={customReportSubject === false ? { display: "none" } : {}}
+              placeholder="Enter Subject of report"
+              onChange={(e) => {
+                setNewReport({
+                  ...newReport,
+                  reportSubject: e.currentTarget.value,
+                });
+              }}
+            />
+
+            <label htmlFor="incidentLocation" className="reportLables">
+              - Incident Location :
+            </label>
+            <span>
+              <input
+                type="text"
+                value={locationCoordAfterFa === "" ? "" : locationCoordAfterFa}
+                id="incidentLocation"
+                className="reportInputs incidentLocation"
+                placeholder="Enter Incident Location"
+                onChange={(e) => {
                   setNewReport({
                     ...newReport,
-                    reportLocationCoords: `${currentPosition.coords.latitude} ${currentPosition.coords.longitude}`,
+                    reportLocationCoords: e.currentTarget.value,
                   });
-                  setLocationCoordAfterFa(
-                    `${currentPosition.coords.latitude} ${currentPosition.coords.longitude}`
+                }}
+              />
+              <FontAwesomeIcon
+                className="faLocation"
+                icon={faLocationCrosshairs}
+                onClick={(e) => {
+                  navigator.geolocation.getCurrentPosition(
+                    (currentPosition) => {
+                      setNewReport({
+                        ...newReport,
+                        reportLocationCoords: `${currentPosition.coords.latitude} ${currentPosition.coords.longitude}`,
+                      });
+                      setLocationCoordAfterFa(
+                        `${currentPosition.coords.latitude} ${currentPosition.coords.longitude}`
+                      );
+                    }
                   );
-                });
-              }}
-            />
-          </span>
-          <label htmlFor="uploads" className="reportLables">
-            - Upload Pictures or Videos :
-          </label>
-          <input
-            type="file"
-            id="uploads"
-            className="reportInputs-file reportInputs"
-            title="Upload Pictures or Videos of Incident"
-            onChange={(e) => {
-              setFileInfo(e.currentTarget.files);
-            }}
-            multiple
-          />
-        </div>
-        <div className="submitButton">
-          <StyledButton
-            btnType="submit"
-            btnText="Submit Report"
-            onClick={handleReportSubmit}
-          />
+                }}
+              />
+            </span>
+            <div className="submitButton">
+              <StyledButton
+                btnType="submit"
+                btnText="Submit Report"
+                onClick={handleReportSubmit}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>

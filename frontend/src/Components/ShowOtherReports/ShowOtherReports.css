@@ -1,16 +1,17 @@
-.showotherreports {
+@media (max-width: 767px) {
+  .showotherreports {
     position: relative;
     width: 100%;
-}
+  }
 
-.cmpTitle {
+  .cmpTitle {
     position: relative;
     top: 10px;
     text-align: center;
     font-size: 2rem;
-}
+  }
 
-.reports {
+  .reports {
     position: relative;
     margin: auto;
     width: 90%;
@@ -18,16 +19,15 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
-}
+  }
 
-
-.images {
+  .images {
     width: 110px;
     height: 100px;
     aspect-ratio: 1/1;
-}
+  }
 
-.reportsDIV {
+  .reportsDIV {
     position: relative;
     border-radius: 10px;
     border: 2px black solid;
@@ -35,22 +35,28 @@
     color: black;
     padding: 5px 5px 10px 5px;
     left: -5px;
-}
+  }
 
-
-.reportTitle {
+  .reportTitle {
     font-size: 1.9em;
     letter-spacing: 1px;
     word-spacing: 1px;
-}
+  }
 
-.reportSubject {
+  .reportType {
+    position: relative;
+    padding-left: 10px;
+    font-size: 15px;
+    color: grey;
+  }
+
+  .reportSubject {
     color: grey;
     font-size: 15px;
     padding-left: 10px;
-}
+  }
 
-.reportMessageDIV {
+  .reportMessageDIV {
     border: 2px grey solid;
     border-radius: 10px;
     padding-left: 5px;
@@ -58,14 +64,14 @@
     position: relative;
     top: 10px;
     margin-bottom: 10px;
-}
+  }
 
-.reportMessage {
+  .reportMessage {
     font-size: 17px;
     padding-top: 5px;
-}
+  }
 
-.commentInput {
+  .commentInput {
     position: relative;
     top: 5px;
     width: 100%;
@@ -74,33 +80,375 @@
     background-color: rgba(128, 128, 128, 0.3);
     height: 30px;
     padding-left: 5px;
-}
+  }
 
-
-.reportMediaAttachement {
+  .reportMediaAttachement {
     display: grid;
     padding-top: 15px;
     padding-bottom: 10px;
     grid-template-columns: repeat(3, 110px);
     justify-content: center;
     column-gap: 5px;
-}
+  }
 
-.hrAfterEachReport {
+  .hrAfterEachReport {
     margin: auto;
     width: 90%;
-}
+  }
 
-.faToPost {
+  .faToPost {
     float: right;
     font-size: 1.2rem;
-}
+  }
 
-.faToPost:hover {
+  .faToPost:hover {
     color: green;
     font-size: 1.5rem;
+  }
+
+  .faToPost:visited {
+    color: blue;
+  }
 }
 
-.faToPost:visited {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .showotherreports {
+    position: relative;
+    width: 100%;
+  }
+
+  .cmpTitle {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .reports {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+
+  .images {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .reportsDIV {
+    position: relative;
+    border-radius: 10px;
+    border: 2px black solid;
+    background-color: white;
+    color: black;
+    padding: 5px 5px 10px 5px;
+    left: -5px;
+    width: 100%;
+  }
+
+  .reportTitle {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+  .reportType {
+    position: relative;
+    padding-left: 10px;
+    font-size: 20px;
+    color: grey;
+  }
+  .reportSubject {
+    color: grey;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .reportMessageDIV {
+    border: 2px grey solid;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .reportMessage {
+    font-size: 2.1rem;
+    padding-top: 5px;
+  }
+
+  .commentInput {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.3);
+    height: 30px;
+    padding-left: 5px;
+  }
+
+  .reportMediaAttachement {
+    display: grid;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(3, 110px);
+    justify-content: space-between;
+    column-gap: 5px;
+    width: 550px;
+    margin-left: 25px;
+  }
+
+  .hrAfterEachReport {
+    margin: auto;
+    width: 90%;
+  }
+
+  .faToPost {
+    float: right;
+    font-size: 1.2rem;
+  }
+
+  .faToPost:hover {
+    color: green;
+    font-size: 1.5rem;
+  }
+
+  .faToPost:visited {
     color: blue;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .showotherreports {
+    position: relative;
+    width: 100%;
+  }
+
+  .cmpTitle {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .reports {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+
+  .images {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .reportsDIV {
+    position: relative;
+    border-radius: 10px;
+    border: 2px black solid;
+    background-color: white;
+    color: black;
+    padding: 5px 5px 10px 5px;
+    left: -5px;
+    width: 100%;
+  }
+
+  .reportTitle {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+  .reportType {
+    position: relative;
+    padding-left: 10px;
+    font-size: 20px;
+    color: grey;
+  }
+  .reportSubject {
+    color: grey;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .reportMessageDIV {
+    border: 2px grey solid;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .reportMessage {
+    font-size: 1.7rem;
+    padding-top: 5px;
+  }
+
+  .commentInput {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.3);
+    height: 30px;
+    padding-left: 5px;
+  }
+
+  .reportMediaAttachement {
+    display: grid;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(3, 110px);
+    justify-content: space-between;
+    column-gap: 5px;
+    width: 550px;
+    margin-left: 25px;
+  }
+
+  .hrAfterEachReport {
+    margin: auto;
+    width: 90%;
+  }
+
+  .faToPost {
+    float: right;
+    font-size: 1.2rem;
+  }
+
+  .faToPost:hover {
+    color: green;
+    font-size: 1.5rem;
+  }
+
+  .faToPost:visited {
+    color: blue;
+  }
+}
+
+@media (min-width: 1440px) {
+  .showotherreports {
+    position: relative;
+    width: 100%;
+  }
+
+  .cmpTitle {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .reports {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+
+  .images {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .reportsDIV {
+    position: relative;
+    border-radius: 10px;
+    border: 2px black solid;
+    background-color: white;
+    color: black;
+    padding: 5px 5px 10px 5px;
+    left: -5px;
+    width: 100%;
+  }
+
+  .reportTitle {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+  }
+  .reportType {
+    position: relative;
+    padding-left: 10px;
+    font-size: 20px;
+    color: grey;
+  }
+  .reportSubject {
+    color: grey;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .reportMessageDIV {
+    border: 2px grey solid;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .reportMessage {
+    font-size: 1.7rem;
+    padding-top: 5px;
+  }
+
+  .commentInput {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.3);
+    height: 30px;
+    padding-left: 5px;
+  }
+
+  .reportMediaAttachement {
+    display: grid;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(3, 110px);
+    justify-content: space-between;
+    column-gap: 5px;
+    width: 550px;
+    margin-left: 25px;
+  }
+
+  .hrAfterEachReport {
+    margin: auto;
+    width: 90%;
+  }
+
+  .faToPost {
+    float: right;
+    font-size: 1.2rem;
+  }
+
+  .faToPost:hover {
+    color: green;
+    font-size: 1.5rem;
+  }
+
+  .faToPost:visited {
+    color: blue;
+  }
 }

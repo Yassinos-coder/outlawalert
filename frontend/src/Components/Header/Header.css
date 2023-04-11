@@ -18,6 +18,12 @@
     width: 70px;
   }
 
+  .faBarsHomeDash {
+    font-size: 2.5rem;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+
   .faBarsHomeDash:hover {
     color: orangered;
   }
@@ -38,7 +44,11 @@
     width: 70px;
     height: 60px;
   }
-
+  .faLogOut {
+    font-size: 2.5rem;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
   .faLogOut:hover {
     color: red;
   }
@@ -160,7 +170,6 @@
   }
 }
 
-
 @media (min-width: 1280px) and (max-width: 1439px) {
   .header-homedash {
     position: relative;
@@ -218,7 +227,6 @@
     color: red;
   }
 }
-
 
 @media (min-width: 1440px) {
   .header-homedash {

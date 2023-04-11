@@ -26,48 +26,27 @@ const ShowOtherReports = () => {
           {AllReports.map((report, index) => (
             <>
               <div key={report._id} className={`reportsDIV report${index}`}>
-                <Link  to={`/Reports/${report._id}`} state={report}>
-                   
+                <Link to={`/Reports/${report._id}`} state={report}>
                   <FontAwesomeIcon
                     className="faToPost"
                     icon={faUpRightFromSquare}
                   />
                 </Link>
-                <span  className="reportTitle">
-                   
-                  {report.reportTitle} 
+                <span className="reportTitle">
+                  {report.reportTitle}
                   {report.isReportAnonyme ? (
-                    <p
-                      style={{
-                        position: "relative",
-                        paddingLeft: "10px",
-                        fontSize: "15px",
-                        color: "grey",
-                      }}
-                    >
-                      Private Report
-                    </p>
+                    <p className="reportType">Private Report</p>
                   ) : (
-                    <p
-                      style={{
-                        position: "relative",
-                        paddingLeft: "10px",
-                        fontSize: "15px",
-                        color: "grey",
-                      }}
-                    >
-                      Public Report
-                    </p>
-                  )} 
+                    <p className="reportType">Public Report</p>
+                  )}
                 </span>
                 <p className="reportSubject">
-                   
-                  {report.reportSubject}, {report.reportDate}, à 
-                  {report.reportLocationCoords} 
+                  {report.reportSubject}, {report.reportDate}, à
+                  {report.reportLocationCoords}
                 </p>
                 <div className="reportMessageDIV">
                   <p className="reportMessage"> {report.reportMessage} </p>
-                  <div  className="reportMediaAttachement">
+                  <div className="reportMediaAttachement">
                     {report.reportMediaAttachement
                       .slice(1)
                       .map((mediaFile, indexMedia) => (
