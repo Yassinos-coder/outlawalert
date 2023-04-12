@@ -1,12 +1,13 @@
-.reportBody {
+@media (max-width: 767px) {
+  .reportBody {
     margin: auto;
     width: 98%;
     margin-top: 10%;
     border-radius: 10px;
     font-size: 1.2rem;
-}
+  }
 
-.clearAllReports {
+  .clearAllReports {
     float: right;
     font-size: 1.2rem;
     border: none;
@@ -18,25 +19,206 @@
     border-radius: 8px;
     background-color: black;
     color: white;
-}
+  }
 
-.clearAllReports:hover {
+  .clearAllReports:hover {
     background-color: grey;
-}
+  }
 
-.tableMaster {
+  .tableMaster {
     width: 100%;
-}
+  }
 
-.tableMasterHead {
+  .tableMasterHead {
     background-color: grey;
-}
+  }
 
-td {
+  td {
     padding-left: 10px;
-}
+  }
 
-tbody {
+  tbody {
     overflow-x: scroll;
     overflow-y: scroll;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .reportBody {
+    margin: auto;
+    width: 98%;
+    margin-top: 5%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .clearAllReports {
+    float: right;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+  }
+
+  .clearAllReports:hover {
+    background-color: grey;
+  }
+
+  .tableMaster {
+    width: 100%;
+  }
+
+  .tableMasterHead {
+    background-color: grey;
+  }
+
+  td {
+    padding-left: 10px;
+  }
+
+  tbody {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .reportBody {
+    margin: auto;
+    width: 98%;
+    margin-top: 3%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .clearAllReports {
+    float: right;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+  }
+
+  .clearAllReports:hover {
+    background-color: grey;
+  }
+
+  .tableMaster {
+    width: 100%;
+  }
+
+  .tableMasterHead {
+    background-color: grey;
+  }
+
+  td {
+    padding-left: 10px;
+  }
+
+  tbody {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .reportBody {
+    margin: auto;
+    width: 98%;
+    margin-top: 3%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .clearAllReports {
+    float: right;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+  }
+
+  .clearAllReports:hover {
+    background-color: grey;
+  }
+
+  .tableMaster {
+    width: 100%;
+  }
+
+  .tableMasterHead {
+    background-color: grey;
+  }
+
+  td {
+    padding-left: 10px;
+  }
+
+  tbody {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+}
+
+@media (min-width: 1440px) {
+  .reportBody {
+    margin: auto;
+    width: 98%;
+    margin-top: 3%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .clearAllReports {
+    float: right;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+  }
+
+  .clearAllReports:hover {
+    background-color: grey;
+  }
+
+  .tableMaster {
+    width: 100%;
+  }
+
+  .tableMasterHead {
+    background-color: grey;
+  }
+
+  td {
+    padding-left: 10px;
+  }
+
+  tbody {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
 }

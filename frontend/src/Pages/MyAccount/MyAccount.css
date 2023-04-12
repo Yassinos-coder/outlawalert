@@ -1,199 +1,1009 @@
-.myaccount {
-  width: 100%;
-}
+@media (max-width: 767px) {
+  .myaccount {
+    width: 100%;
+  }
 
-.ppActions {
-  position: relative;
-  background-color: rgba(128, 128, 128, 0.8);
-  color: black;
-  font-size: 1.5rem;
-  width: 100px;
-  border-radius: 10px;
-  padding: 5px;
-  left: 145px;
-  top: 30px;
-}
+  .ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 145px;
+    top: 30px;
+  }
 
-.hrImgActions {
-  position: absolute;
-  transform: rotate(90deg);
-  width: 30px;
-  left: 35px;
-  top: 20px;
-  height: 2px;
-}
+  .hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+  }
 
-.faRepeat:hover {
-  color: yellow;
-}
+  .faRepeat:hover {
+    color: yellow;
+  }
 
-.faTrash {
-  position: relative;
-  left: 40px;
-}
+  .faTrash {
+    position: relative;
+    left: 40px;
+  }
 
-.faTrash:hover {
-  color: red;
-}
+  .faTrash:hover {
+    color: red;
+  }
 
-.pp {
-  position: relative;
-  background-color: grey;
-  overflow: hidden;
-  top: 20px;
-  left: 90px;
-  width: 210px;
-  height: 200px;
-  border-radius: 50%;
-}
+  .pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 20px;
+    left: 90px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+  }
 
-.pp-img {
-  margin: auto;
-  max-width: 100%;
-  min-width: 100%;
-}
+  .pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
 
-.btnListActions {
-  position: relative;
-  text-align: center;
-  top: 50px;
-}
+  .btnListActions {
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
 
-.btnListActions > div {
-  margin-bottom: 10px;
-}
+  .btnListActions > div {
+    margin-bottom: 10px;
+  }
 
-.newEmail {
-  position: relative;
-  background-color: rgba(128, 128, 128, 0.6);
-  top: 5px;
-  margin: auto;
-  width: 300px;
-  height: 100px;
-  border-radius: 10px;
-}
+  .newEmail {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
 
-.newEmail-Input {
-  position: relative;
-  top: 10px;
-  display: block;
-  margin: auto;
-  width: 230px;
-  font-size: 1rem;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-}
+  .newEmail-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
 
-.updateEmailBtn {
-  position: relative;
-  top: 15px;
-  font-size: 1.2rem;
-  width: 150px;
-  height: 45px;
-  border: none;
-  border-radius: 10px;
-  background-color: #000000;
-  color: white;
-  padding: 10px;
-}
+  .updateEmailBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
 
-.updateEmailBtn:hover {
-  background: #2b2a2a;
-}
+  .updateEmailBtn:hover {
+    background: #2b2a2a;
+  }
 
-.newPassword {
-  position: relative;
-  background-color: rgba(128, 128, 128, 0.6);
-  top: 5px;
-  margin: auto;
-  width: 300px;
-  height: 150px;
-  border-radius: 10px;
-}
+  .newPassword {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+  }
 
-.newPassword-Input {
-  position: relative;
-  top: 10px;
-  display: block;
-  margin: auto;
-  width: 230px;
-  font-size: 1rem;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+  .newPassword-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-.updatePasswordBtn {
-  position: relative;
-  top: 15px;
-  font-size: 1.2rem;
-  width: 170px;
-  height: 45px;
-  border: none;
-  border-radius: 10px;
-  background-color: #000000;
-  color: white;
-  padding: 10px;
-}
+  .updatePasswordBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
 
-.updatePasswordBtn:hover {
-  background: #2b2a2a;
-}
+  .updatePasswordBtn:hover {
+    background: #2b2a2a;
+  }
 
-.deleteAccount {
-  position: relative;
-  background-color: rgba(128, 128, 128, 0.6);
-  top: 5px;
-  margin: auto;
-  width: 300px;
-  height: 100px;
-  border-radius: 10px;
-}
+  .deleteAccount {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
 
-.deleteAccount > p {
-  position: relative;
-  font-size: 1.2rem;
-  text-align: center;
-  top: 5px;
-}
-.cancelActionDelete {
-  position: relative;
-  width: 90px;
-  font-size: 1.2rem;
-  color: white;
-  background-color: red;
-  border-radius: 10px;
-  border: none;
-  padding: 2px;
-  top: 10px;
-  left: -10px;
-}
+  .deleteAccount > p {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 5px;
+  }
+  .cancelActionDelete {
+    position: relative;
+    width: 90px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    top: 10px;
+    left: -10px;
+  }
 
-.confirmActionDelete {
-  position: relative;
-  width: 150px;
-  font-size: 1.2rem;
-  color: white;
-  background-color: rgb(10, 163, 10);
-  border-radius: 10px;
-  border: none;
-  padding: 2px;
-  left: 10px;
-  top: 10px;
-}
+  .confirmActionDelete {
+    position: relative;
+    width: 150px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(10, 163, 10);
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    left: 10px;
+    top: 10px;
+  }
 
-.confirmActionDelete:hover {
-    box-shadow: -1px -1px 31px 4px rgba(10,163,10,0.51);
-    -webkit-box-shadow: -1px -1px 31px 4px rgba(10,163,10,0.51);
-    -moz-box-shadow: -1px -1px 31px 4px rgba(10,163,10,0.51);
-}
+  .confirmActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -webkit-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -moz-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+  }
 
-.cancelActionDelete:hover {
+  .cancelActionDelete:hover {
     box-shadow: -1px -1px 31px 4px red;
     -webkit-box-shadow: -1px -1px 31px 4px red;
     -moz-box-shadow: -1px -1px 31px 4px red;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .myaccount {
+    width: 100%;
+  }
+
+  .ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 350px;
+    top: 30px;
+  }
+
+  .hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+  }
+
+  .faRepeat:hover {
+    color: yellow;
+  }
+
+  .faTrash {
+    position: relative;
+    left: 40px;
+  }
+
+  .faTrash:hover {
+    color: red;
+  }
+
+  .pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 20px;
+    left: 290px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .btnListActions {
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
+
+  .btnListActions > div {
+    margin-bottom: 10px;
+  }
+
+  .newEmail {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .newEmail-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .updateEmailBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updateEmailBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .newPassword {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .newPassword-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .updatePasswordBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updatePasswordBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .deleteAccount {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .deleteAccount > p {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 5px;
+  }
+  .cancelActionDelete {
+    position: relative;
+    width: 90px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    top: 10px;
+    left: -10px;
+  }
+
+  .confirmActionDelete {
+    position: relative;
+    width: 150px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(10, 163, 10);
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    left: 10px;
+    top: 10px;
+  }
+
+  .confirmActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -webkit-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -moz-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+  }
+
+  .cancelActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px red;
+    -webkit-box-shadow: -1px -1px 31px 4px red;
+    -moz-box-shadow: -1px -1px 31px 4px red;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .myaccount {
+    width: 100%;
+  }
+
+  .ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 580px;
+    top: 30px;
+  }
+
+  .hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+  }
+
+  .faRepeat:hover {
+    color: yellow;
+  }
+
+  .faTrash {
+    position: relative;
+    left: 40px;
+  }
+
+  .faTrash:hover {
+    color: red;
+  }
+
+  .pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 20px;
+    left: 520px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .btnListActions {
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
+
+  .btnListActions > div {
+    margin-bottom: 10px;
+  }
+
+  .newEmail {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .newEmail-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .updateEmailBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updateEmailBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .newPassword {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .newPassword-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .updatePasswordBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updatePasswordBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .deleteAccount {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .deleteAccount > p {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 5px;
+  }
+  .cancelActionDelete {
+    position: relative;
+    width: 90px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    top: 10px;
+    left: -10px;
+  }
+
+  .confirmActionDelete {
+    position: relative;
+    width: 150px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(10, 163, 10);
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    left: 10px;
+    top: 10px;
+  }
+
+  .confirmActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -webkit-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -moz-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+  }
+
+  .cancelActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px red;
+    -webkit-box-shadow: -1px -1px 31px 4px red;
+    -moz-box-shadow: -1px -1px 31px 4px red;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .myaccount {
+    width: 100%;
+  }
+
+  .ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 580px;
+    top: 30px;
+  }
+
+  .hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+  }
+
+  .faRepeat:hover {
+    color: yellow;
+  }
+
+  .faTrash {
+    position: relative;
+    left: 40px;
+  }
+
+  .faTrash:hover {
+    color: red;
+  }
+
+  .pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 20px;
+    left: 520px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .btnListActions {
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
+
+  .btnListActions > div {
+    margin-bottom: 10px;
+  }
+
+  .newEmail {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .newEmail-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .updateEmailBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updateEmailBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .newPassword {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .newPassword-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .updatePasswordBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updatePasswordBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .deleteAccount {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .deleteAccount > p {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 5px;
+  }
+  .cancelActionDelete {
+    position: relative;
+    width: 90px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    top: 10px;
+    left: -10px;
+  }
+
+  .confirmActionDelete {
+    position: relative;
+    width: 150px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(10, 163, 10);
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    left: 10px;
+    top: 10px;
+  }
+
+  .confirmActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -webkit-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -moz-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+  }
+
+  .cancelActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px red;
+    -webkit-box-shadow: -1px -1px 31px 4px red;
+    -moz-box-shadow: -1px -1px 31px 4px red;
+  }
+}
+
+@media (min-width: 1440px) {
+  .myaccount {
+    width: 100%;
+  }
+
+  .ppActions {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: black;
+    font-size: 1.5rem;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    left: 910px;
+    top: 50px;
+  }
+
+  .hrImgActions {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 30px;
+    left: 35px;
+    top: 20px;
+    height: 2px;
+  }
+
+  .faRepeat:hover {
+    color: yellow;
+  }
+
+  .faTrash {
+    position: relative;
+    left: 40px;
+  }
+
+  .faTrash:hover {
+    color: red;
+  }
+
+  .pp {
+    position: relative;
+    background-color: grey;
+    overflow: hidden;
+    top: 40px;
+    left: 850px;
+    width: 210px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .pp-img {
+    margin: auto;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .btnListActions {
+    position: relative;
+    text-align: center;
+    top: 100px;
+  }
+
+  .btnListActions > div {
+    margin-bottom: 10px;
+  }
+
+  .newEmail {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .newEmail-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .updateEmailBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updateEmailBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .newPassword {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .newPassword-Input {
+    position: relative;
+    top: 10px;
+    display: block;
+    margin: auto;
+    width: 230px;
+    font-size: 1rem;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .updatePasswordBtn {
+    position: relative;
+    top: 15px;
+    font-size: 1.2rem;
+    width: 170px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+  }
+
+  .updatePasswordBtn:hover {
+    background: #2b2a2a;
+  }
+
+  .deleteAccount {
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.6);
+    top: 5px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .deleteAccount > p {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 5px;
+  }
+  .cancelActionDelete {
+    position: relative;
+    width: 90px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    top: 10px;
+    left: -10px;
+  }
+
+  .confirmActionDelete {
+    position: relative;
+    width: 150px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(10, 163, 10);
+    border-radius: 10px;
+    border: none;
+    padding: 2px;
+    left: 10px;
+    top: 10px;
+  }
+
+  .confirmActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -webkit-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+    -moz-box-shadow: -1px -1px 31px 4px rgba(10, 163, 10, 0.51);
+  }
+
+  .cancelActionDelete:hover {
+    box-shadow: -1px -1px 31px 4px red;
+    -webkit-box-shadow: -1px -1px 31px 4px red;
+    -moz-box-shadow: -1px -1px 31px 4px red;
+  }
 }
