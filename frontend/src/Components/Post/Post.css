@@ -1,113 +1,597 @@
-.post {
-  position: relative;
-  width: 100%;
+@media (max-width: 767px) {
+  .post {
+    position: relative;
+    width: 100%;
+  }
+
+  .postTitle {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+  }
+
+  .postContainer {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .commentSection {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 95%;
+  }
+
+  .titleComment {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
+
+  .titleComment:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+  }
+  .commentSectionVisibility {
+    padding-left: 127px;
+    font-size: 17px;
+  }
+  .sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .sendButton:hover {
+    border-radius: 50%;
+    color: green;
+  }
+
+  .commentsOnPost {
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comment {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  /* .commentHeader {
+  } */
+
+  .usernameOfCommenter {
+    position: relative;
+    top: -25px;
+    left: 50px;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.4);
+    width: 35%;
+    text-align: center;
+  }
+
+  .commenterLogo {
+    background-color: rgba(128, 128, 128, 0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 35px;
+    overflow: hidden;
+    left: 10px;
+    top: 5px;
+  }
+
+  .commenterLogo > img {
+    width: 30px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+
+  .commentText {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    font-size: 18px;
+    left: 15px;
+    color: black;
+    top: -15px;
+    border-radius: 10px;
+  }
 }
 
-.postTitle {
-  text-align: center;
-  font-size: 2rem;
-  padding-top: 10px;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .post {
+    position: relative;
+    width: 100%;
+  }
+
+  .postTitle {
+    text-align: center;
+    font-size: 2.7rem;
+    padding-top: 10px;
+  }
+
+  .postContainer {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .commentSection {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 95%;
+  }
+
+  .titleComment {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
+
+  .titleComment:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+  }
+
+  .commentSectionVisibility {
+    font-size: 17px;
+    padding-left: 550px;
+  }
+
+  .sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .sendButton:hover {
+    border-radius: 50%;
+    color: green;
+  }
+
+  .commentsOnPost {
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comment {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  /* .commentHeader {
+  } */
+
+  .usernameOfCommenter {
+    position: relative;
+    top: -25px;
+    left: 50px;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.4);
+    width: 20%;
+    text-align: center;
+  }
+
+  .commenterLogo {
+    background-color: rgba(128, 128, 128, 0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 35px;
+    overflow: hidden;
+    left: 10px;
+    top: 5px;
+  }
+
+  .commenterLogo > img {
+    width: 30px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+
+  .commentText {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    font-size: 18px;
+    left: -170px;
+    color: black;
+    top: -15px;
+    border-radius: 10px;
+  }
 }
 
-.postContainer {
-  background-color: white;
-  position: relative;
-  margin: auto;
-  width: 90%;
-  border: 1px black solid;
-  border-radius: 10px;
-  color: black;
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .post {
+    position: relative;
+    width: 100%;
+  }
+
+  .postTitle {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+  }
+
+  .postContainer {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .commentSection {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 89%;
+  }
+
+  .titleComment {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
+
+  .titleComment:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+  }
+
+  .commentSectionVisibility {
+    font-size: 17px;
+    padding-left: 950px;
+  }
+
+  .sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .sendButton:hover {
+    border-radius: 50%;
+    color: green;
+  }
+
+  .commentsOnPost {
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comment {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  /* .commentHeader {
+  } */
+
+  .usernameOfCommenter {
+    position: relative;
+    top: -25px;
+    left: 50px;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.4);
+    width: 12%;
+    text-align: center;
+  }
+
+  .commenterLogo {
+    background-color: rgba(128, 128, 128, 0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 35px;
+    overflow: hidden;
+    left: 10px;
+    top: 5px;
+  }
+
+  .commenterLogo > img {
+    width: 30px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+
+  .commentText {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    font-size: 18px;
+    left: -350px;
+    color: black;
+    top: -15px;
+    border-radius: 10px;
+  }
 }
 
-.commentSection {
-  position: relative;
-  top: 50px;
-  margin: auto;
-  width: 95%;
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .post {
+    position: relative;
+    width: 100%;
+  }
+
+  .postTitle {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+  }
+
+  .postContainer {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .commentSection {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 89%;
+  }
+
+  .titleComment {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
+
+  .titleComment:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+  }
+
+  .commentSectionVisibility {
+    font-size: 17px;
+    padding-left: 950px;
+  }
+
+  .sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .sendButton:hover {
+    border-radius: 50%;
+    color: green;
+  }
+
+  .commentsOnPost {
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .comment {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  /* .commentHeader {
+  } */
+
+  .usernameOfCommenter {
+    position: relative;
+    top: -25px;
+    left: 50px;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.4);
+    width: 12%;
+    text-align: center;
+  }
+
+  .commenterLogo {
+    background-color: rgba(128, 128, 128, 0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 35px;
+    overflow: hidden;
+    left: 10px;
+    top: 5px;
+  }
+
+  .commenterLogo > img {
+    width: 30px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+
+  .commentText {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    font-size: 18px;
+    left: -350px;
+    color: black;
+    top: -15px;
+    border-radius: 10px;
+  }
 }
 
-.titleComment {
-  font-size: 1.2rem;
-  padding-top: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-bottom: 4px;
-}
+@media (min-width: 1440px) {
+  .post {
+    position: relative;
+    width: 100%;
+  }
 
-.titleComment:hover {
-  background-color: rgba(128, 128, 128, 0.4);
-  border-radius: 10px;
-}
+  .postTitle {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+  }
 
-.sendButton {
-  position: relative;
-  top: -20px;
-  font-size: 17px;
-  float: right;
-  padding-right: 10px;
-  padding-left: 10px;
-}
+  .postContainer {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 10px;
+    color: black;
+  }
 
-.sendButton:hover {
-  border-radius: 50%;
-  color: green;
-}
+  .commentSection {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 89%;
+  }
 
-.commentsOnPost {
-  display: flex;
-  max-width: 100%;
-  min-width: 100%;
-  flex-wrap: wrap;
-}
+  .titleComment {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+  }
 
-.comment {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px grey solid;
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-}
+  .titleComment:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+  }
 
-/* .commentHeader {
-} */
+  .commentSectionVisibility {
+    font-size: 17px;
+    padding-left: 1520px;
+  }
 
-.usernameOfCommenter {
-  position: relative;
-  top: -25px;
-  left: 50px;
-  font-size: 1.2rem;
-  background-color: rgba(128, 128, 128, 0.4);
-  width: 35%;
-  text-align: center;
-}
+  .sendButton {
+    position: relative;
+    top: -20px;
+    font-size: 17px;
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 
-.commenterLogo {
-  background-color: rgba(128, 128, 128, 0.4);
-  position: relative;
-  border-radius: 10px;
-  width: 35px;
-  overflow: hidden;
-  left: 10px;
-  top: 5px;
-}
+  .sendButton:hover {
+    border-radius: 50%;
+    color: green;
+  }
 
-.commenterLogo > img {
-  width: 30px;
-  position: relative;
-  top: 1px;
-  left: 3px;
-}
+  .commentsOnPost {
+    display: flex;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
 
-.commentText {
-  margin: auto;
-  position: relative;
-  width: 300px;
-  font-size: 18px;
-  left: 15px;
-  color: black;
-  top: -15px;
-  border-radius: 10px;
-  
+  .comment {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px grey solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+  }
+
+  /* .commentHeader {
+  } */
+
+  .usernameOfCommenter {
+    position: relative;
+    top: -25px;
+    left: 50px;
+    font-size: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.4);
+    width: 9%;
+    text-align: center;
+  }
+
+  .commenterLogo {
+    background-color: rgba(128, 128, 128, 0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 35px;
+    overflow: hidden;
+    left: 10px;
+    top: 5px;
+  }
+
+  .commenterLogo > img {
+    width: 30px;
+    position: relative;
+    top: 1px;
+    left: 3px;
+  }
+
+  .commentText {
+    margin: auto;
+    position: relative;
+    width: 300px;
+    font-size: 18px;
+    left: -620px;
+    color: black;
+    top: -15px;
+    border-radius: 10px;
+  }
 }

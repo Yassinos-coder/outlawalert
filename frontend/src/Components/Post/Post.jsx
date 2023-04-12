@@ -124,8 +124,8 @@ const Post = () => {
           <p className="titleComment" onClick={handleCommentSectionCollapse}>
             Comments Section :
             <FontAwesomeIcon
-              style={{ paddingLeft: "170px", fontSize: "16px" }}
               icon={commentSectionVisibility}
+              className="commentSectionVisibility"
             />
           </p>
           <div className="commentsOnPost">
