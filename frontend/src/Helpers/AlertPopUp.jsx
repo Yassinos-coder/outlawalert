@@ -36,7 +36,7 @@ const AlertPopUp = (props) => {
         }
         setInterval(() => {
             setVisible(false)
-        }, 3000);
+        }, 5000);
 
     }, [props.alertType, props.alertVisible])
 
