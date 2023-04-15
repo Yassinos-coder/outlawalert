@@ -34,6 +34,10 @@
     top: 10%;
   }
 
+  .userBox > button {
+    left: 50px;
+  }
+
   .labels-login {
     display: block;
     font-weight: 900;
