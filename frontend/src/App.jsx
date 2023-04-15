@@ -14,6 +14,7 @@ import SubmitAnonymeReport from './Components/SubmitAnonymeReport/SubmitAnonymeR
 import ShowOtherReports from './Components/ShowOtherReports/ShowOtherReports'
 import Post from './Components/Post/Post'
 import MyAccount from './Pages/MyAccount/MyAccount'
+import ResetPassword from './Pages/ResetPassword/ResetPassword'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/SignUp' element={<SignUp />} />
             <Route path='/SignIn' element={<SignIn />} />
             <Route path='/AboutUs' element={<AboutUs />} />
+            <Route path="/resetCredentials/:userid/:userGenToken" element={<ResetPassword />}/>
             <Route element={<PrivateRoute/>}>
               <Route path="/ReportsHistory/:userid/" element={<ReportsHistory />} />
               <Route path='/Dashboard/:userid/' element={<HomeDash />}>

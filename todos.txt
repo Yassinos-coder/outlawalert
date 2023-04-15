@@ -8,5 +8,6 @@
 - Report History BackEnd Side / FrontEnd Side (Done)
 - My Account FrontEnd (Done)
 - My Account BackEnd/Actions (Done)
-- ACTIONS CSS 
-- OFF CANVAS ACTIONS CSS
+- ACTIONS CSS (DONE)
+- OFF CANVAS ACTIONS CSS (DONE)
+- Built Request Sender for PassReset (DONE)
