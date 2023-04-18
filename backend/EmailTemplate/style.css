@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+}
+.emailBody {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgb(194, 194, 194);
+  margin-top: -21px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.emailHeader {
+  position: relative;
+  background-color: rgb(90, 90, 90);
+  width: 100%;
+  height: 10vh;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+#headerTitle {
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: 1px;
+  color: white;
+}
+.mainBody {
+  padding: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+#noticeP {
+  font-weight: 700;
+  color: black;
+}
