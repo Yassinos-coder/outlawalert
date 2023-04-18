@@ -16,7 +16,7 @@ const newNoticeOnEmail = async (emailRecipient, message, subject) => {
     secure: true,
     auth: {
       user: "sactroanonymous@Gmail.com",
-      pass: "cdsmmaxyejpdngdm",
+      pass: process.env.EMAIL_APP_PASS,
     },
   });
   // const ipaddress = await axios.get('https://api.ipify.org', (req, res) => {return res})
