@@ -104,7 +104,66 @@ userAPI.get("/user/GetUserData/:uuid", async (req, res) => {
 userAPI.post("/user/LogIn", async (req, res) => {
   let loginCreds = req.body;
   //let mailSubject = "New Connection Detected ⚠️!";
-  //let htmlMsg = `<h1 style='background-color: red;border-radius: 10px; margin:auto; text-align: center; max-width: 500px;'>New Connection Detected</h1><h3>We detected a new login from this IP Address: ${ipInfo.data.ip} located in ${ipInfo.data.city}, ${ipInfo.data.region_name}, ${ipInfo.data.country_name} ${ipInfo.data.location.country_flag_emoji}, ${ipInfo.data.continent_name} </h3>`;
+  let htmlMsg = `
+  <div class="emailBody"> <style> @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: normal;
+      }
+      .emailBody {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: rgb(194, 194, 194);
+        margin-top: -21px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      .emailHeader {
+        position: relative;
+        background-color: rgb(90, 90, 90);
+        width: 100%;
+        height: 10vh;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      #headerTitle {
+        text-align: center;
+        line-height: 100px;
+        letter-spacing: 1px;
+        color: white;
+      }
+      .mainBody {
+        padding: 10px;
+        font-size: 2rem;
+        text-align: center;
+      }
+      #noticeP {
+        font-weight: 700;
+        color: black;
+      }
+    </style>
+    <div class="emailHeader">
+      <h1 id="headerTitle">⚠️ New Connection Detected ⚠️</h1>
+    </div>
+    <div class="mainBody">
+      <p>
+        We detected a new login from this IP Address: <br />
+        ${ipInfo.data.ip} <br />
+        located in ${ipInfo.data.city}, ${ipInfo.data.region_name}, <br />
+        ${ipInfo.data.country_name}
+        ${ipInfo.data.location.country_flag_emoji},
+        ${ipInfo.data.continent_name}
+      </p>
+      <p id="noticeP">
+        If that wasn't you, we recommend that you change your password right
+        away.
+      </p>
+    </div>
+  </div>`;
 
   try {
     const isUserLegit = await UserModel.findOne({ cin: loginCreds.cin });
@@ -239,7 +298,69 @@ userAPI.post("/user/RequestPasswordReset/:cin", async (req, res) => {
     const userData = await UserModel.findOne({ cin: userCIN });
     let passResetLink = `http://localhost:3000/resetCredentials/${userData._id}/${userData.userToken}`;
     let mailSubject = "Password Reset Request";
-    let htmlMsg = `<h1 style='background-color: red;border-radius: 10px; margin:auto; text-align: center; max-width: 500px;'>Password Reset Request </h1><h3>Here is your password reset link for the account with ${userData.email} Email Address => <a href=${passResetLink}> Reset Password</a> </h3>`;
+    let htmlMsg = `
+    <html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+    <div class="emailBody"> 
+      <style> @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+        body {
+          margin: 0;ss
+          padding: 0;s
+          box-sizing: border-box;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: normal;
+        }
+        .emailBody {
+          width: 100%;
+          height: 100vh;
+          position: relative;
+          background-color: rgb(194, 194, 194);
+          margin-top: -21px;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+        .emailHeader {
+          position: relative;
+          background-color: rgb(90, 90, 90);
+          width: 100%;
+          height: 10vh;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+        #headerTitle {
+          text-align: center;
+          line-height: 100px;
+          letter-spacing: 1px;
+          color: white;
+        }
+        .mainBody {
+          padding: 10px;
+          font-size: 2rem;
+          text-align: center;
+        }
+        #noticeP {
+          font-weight: 700;
+          color: black;
+        }
+      </style>
+      <div class="emailHeader">
+        <h1 id="headerTitle">⚠️ Password Reset Request ⚠️</h1>
+      </div>
+      <div class="mainBody">
+        <p>
+          Here is your password reset link for the account with ${userData.email} Email Address => <a href=${passResetLink}> Reset Password</a> 
+        </p>
+        <p id="noticeP">
+          If that wasn't you, we recommend that you change your password right
+          away.
+        </p>
+      </div>
+    </div>
+    </body>
+    </html>`;
     newNoticeOnEmail(userData.email, htmlMsg, mailSubject);
     res.send({ message: "requestSent" });
   } catch (err) {
