@@ -1,7 +1,7 @@
 class SignUpModal {
     constructor ( 
         avatar='noavatar', firstname ='', lastname='', username='',
-        cin='', address='', email='', phonenumber='', dob='', tokenExpirationDate='', verificationToken='',isVerified='false',
+        cin='', address='', email='', phonenumber='', dob='', tokenExpirationDate='', userToken='',isVerified='false',
         password=''
     ){
         this.avatar = avatar
@@ -14,7 +14,7 @@ class SignUpModal {
         this.phonenumber = phonenumber
         this.dob = dob
         this.tokenExpirationDate= tokenExpirationDate
-        this.verificationToken = verificationToken
+        this.userToken = userToken
         this.isVerified = isVerified
         this.password = password
     }

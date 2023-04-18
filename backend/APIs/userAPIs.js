@@ -8,7 +8,6 @@ const userAPI = Router();
 const { JWT } = require("../Helpers/jwtConfig");
 const randomString = require("randomstring");
 const nodemailer = require("nodemailer");
-const axios = require("axios");
 
 const newNoticeOnEmail = async (emailRecipient, message, subject) => {
   let transporter = nodemailer.createTransport({
@@ -56,8 +55,8 @@ userAPI.post("/user/newUser", async (req, res) => {
       //below makes cin identifier lowercase
       newUserData.cin = newUserData.cin.toLowerCase();
       // below generate random token for verification of email
-      const verifToken = randomString.generate(25);
-      newUserData.verificationToken = verifToken;
+      const userTokenGen = randomString.generate(32);
+      newUserData.userToken = userTokenGen;
       // below get current time and date to save as expiration date for token
       const currentTime = new Date();
       const oneDay = 24 * 60 * 60 * 1000; // milliseconds in a day
@@ -80,7 +79,7 @@ userAPI.post("/user/newUser", async (req, res) => {
           cin: newUserData.cin,
         });
         res.send({
-          tokenVerif: verifToken,
+          tokenVerif: userTokenGen,
           uuid: userDataAfterSignUp._id,
           message: "AccountCreatedSuccess",
         });
@@ -236,16 +235,28 @@ userAPI.post("/user/DeleteAccount/:uuid", async (req, res) => {
 userAPI.post("/user/RequestPasswordReset/:cin", async (req, res) => {
   let userCIN = req.params.cin.toLowerCase();
   try {
-    console.log(userCIN)
+    console.log(userCIN);
     const userData = await UserModel.findOne({ cin: userCIN });
-    let passResetLink = `http://localhost:3000/resetCredentials/${userData._id}/${userData.verificationToken}`;
+    let passResetLink = `http://localhost:3000/resetCredentials/${userData._id}/${userData.userToken}`;
     let mailSubject = "Password Reset Request";
     let htmlMsg = `<h1 style='background-color: red;border-radius: 10px; margin:auto; text-align: center; max-width: 500px;'>Password Reset Request </h1><h3>Here is your password reset link for the account with ${userData.email} Email Address => <a href=${passResetLink}> Reset Password</a> </h3>`;
     newNoticeOnEmail(userData.email, htmlMsg, mailSubject);
-    res.send({message: 'requestSent'})
+    res.send({ message: "requestSent" });
   } catch (err) {
     console.error(`Error in RequestPasswordReset API,  ${err}`);
-    res.send({message: 'requestFailed'})
+    res.send({ message: "requestFailed" });
+  }
+});
+
+userAPI.get("/user/checkUserForPasswordReset/:uuid", async (req, res) => {
+  let uuid = req.params.uuid;
+  try {
+    const result = await UserModel.findOne({ _id: uuid });
+    if (result) {
+      res.send({ message: "UserAllowed" });
+    }
+  } catch (err) {
+    res.send({ message: "userNotAllowed" });
   }
 });
 
@@ -264,8 +275,8 @@ userAPI.post(
         const userDoesExist = await UserModel.findOne({ _id: uuid });
         if (userDoesExist) {
           if (
-            userToken === userDoesExist.verificationToken &&
-            uuid === userDoesExist._id
+            userToken === userDoesExist.userToken &&
+            uuid === userDoesExist._id.toString().slice(-24)
           ) {
             const hashedNewPass = bcrypt.hashSync(
               NewPassData.password,
@@ -275,16 +286,19 @@ userAPI.post(
               { _id: uuid },
               { password: hashedNewPass }
             );
-            newNoticeOnEmail(userData.email, htmlMsg, mailSubject);
+            newNoticeOnEmail(userDoesExist.email, htmlMsg, mailSubject);
             res.send("PassUpdateSuccess");
           } else {
             res.send("BigErrorRetry");
+            console.error(`Error in PasswordResetExecution API 1`);
           }
         } else {
           res.send("UserDoesNotExist");
+          console.error(`Error in PasswordResetExecution API 2`);
         }
       } else {
         res.send("BigError");
+        console.error(`Error in PasswordResetExecution API 3`);
       }
     } catch (err) {
       console.error(`Error in PasswordResetExecution API ${err}`);

@@ -117,12 +117,26 @@ export const RequestPasswordReset = createAsyncThunk(
   }
 );
 
+export const checkUserForPasswordReset = createAsyncThunk(
+  "user/checkUserForPasswordReset",
+  async ({ uuid }) => {
+    try {
+      const response = await AxiosConfig.get(
+        `/user/checkUserForPasswordReset/${uuid}`
+      );
+      return response.data;
+    } catch (err) {
+      console.warn(`Error in checkUserForPasswordReset Reducer ${err}`);
+    }
+  }
+);
+
 export const PasswordResetExecution = createAsyncThunk(
   "user/PasswordResetExecution",
-  async ({ uuid, userToken }) => {
+  async ({ uuid, userToken, NewPassData }) => {
     try {
       const response = await AxiosConfig.post(
-        `/user/PasswordResetExecution/${uuid}/${userToken}`
+        `/user/PasswordResetExecution/${uuid}/${userToken}`, NewPassData
       );
       return response.data;
     } catch (err) {
@@ -230,6 +244,15 @@ const UserReducer = createSlice({
         state.status = "pending";
       })
       .addCase(PasswordResetExecution.rejected, (state) => {
+        state.status = "rejected";
+      })
+      .addCase(checkUserForPasswordReset.fulfilled, (state, action) => {
+        state.status = "accepted";
+      })
+      .addCase(checkUserForPasswordReset.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(checkUserForPasswordReset.rejected, (state) => {
         state.status = "rejected";
       });
   },

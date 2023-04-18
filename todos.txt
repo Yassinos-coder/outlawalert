@@ -11,3 +11,5 @@
 - ACTIONS CSS (DONE)
 - OFF CANVAS ACTIONS CSS (DONE)
 - Built Request Sender for PassReset (DONE)
+- Reset PasswordUI (DONE)
+- Fix Loader BUG, Fix Navigate tO Signin after pass changed 

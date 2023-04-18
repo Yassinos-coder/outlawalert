@@ -38,7 +38,7 @@ const userModel = db.Schema({
         type: String,
         required: true
     },
-    verificationToken : {
+    userToken : {
         type: String,
         required: true
     },
