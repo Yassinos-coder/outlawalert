@@ -192,7 +192,7 @@ userAPI.post("/user/ProfilePictureUpdate/:uuid", JWT, async (req, res) => {
         });
       }
     });
-  } catch (error) {
+  } catch (err) {
     console.error(`Error in uploadPic API ${err}`);
     res.send({
       message: "updateFailed",
@@ -252,6 +252,8 @@ userAPI.post("/user/DeleteAccount/:uuid", async (req, res) => {
     const userData = await UserModel.findOne({ _id: uuid });
     await UserModel.deleteOne({ _id: uuid });
     let path = `./Uploads/Users/${userData.username}`;
+    let pathUpload = `./Uploads/PublicReports/${userData.username}`;
+    fs.rmSync(pathUpload, { recursive: true, force: true });
     fs.rmSync(path, { recursive: true, force: true });
     res.send({ message: "UserDeleteSuccess" });
   } catch (err) {
