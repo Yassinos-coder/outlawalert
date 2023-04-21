@@ -1,20 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./ShowOtherReports.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../Helpers/Loader";
 import { getAllReports } from "../../Redux/ReportReducer";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faFolderOpen, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const ShowOtherReports = () => {
   const dispatch = useDispatch();
+  const [noReportYet, setNoReportYet] = useState(true)
   const pendingStatus = useSelector((state) => state.ReportReducer.status);
   const AllReports = useSelector((state) => state.ReportReducer.AllReports);
 
   useEffect(() => {
-    dispatch(getAllReports());
+    dispatch(getAllReports()).then((data) => {
+      if (data.payload === '') {
+        setNoReportYet(true)
+      } else {
+        setNoReportYet(false)
+      }
+    });
   }, []);
 
   return (
@@ -22,6 +29,9 @@ const ShowOtherReports = () => {
       <div className="showotherreports">
         <Loader loadVisible={pendingStatus === "pending" ? true : false} />
         <div className="cmpTitle">Other Reports</div>
+          <p className="noreport" style={noReportYet ? {} : {display:'none'}}>
+          <FontAwesomeIcon icon={faFolderOpen} style={{paddingRight:'10px'}} />
+            No reports to show here yet.</p>
         <div className="reports">
           {AllReports.map((report, index) => (
             <>

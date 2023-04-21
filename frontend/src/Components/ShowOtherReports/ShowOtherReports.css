@@ -20,6 +20,12 @@
     flex-wrap: wrap;
     row-gap: 10px;
   }
+  .noreport {
+    font-size: 1.7rem;
+    color: grey;
+    padding-top: 100px;
+    text-align: center;
+  }
 
   .images {
     width: 110px;
@@ -133,7 +139,12 @@
     flex-wrap: wrap;
     row-gap: 15px;
   }
-
+  .noreport {
+    font-size: 2.5rem;
+    color: grey;
+    padding-top: 100px;
+    text-align: center;
+  }
   .images {
     width: 200px;
     height: 200px;
@@ -247,7 +258,12 @@
     flex-wrap: wrap;
     row-gap: 15px;
   }
-
+  .noreport {
+    font-size: 2.5rem;
+    color: grey;
+    padding-top: 100px;
+    text-align: center;
+  }
   .images {
     width: 200px;
     height: 200px;
@@ -361,7 +377,12 @@
     flex-wrap: wrap;
     row-gap: 15px;
   }
-
+  .noreport {
+    font-size: 2.5rem;
+    color: grey;
+    padding-top: 100px;
+    text-align: center;
+  }
   .images {
     width: 200px;
     height: 200px;
@@ -377,6 +398,13 @@
     padding: 5px 5px 10px 5px;
     left: -5px;
     width: 100%;
+  }
+
+  .noreport {
+    font-size: 2.5rem;
+    color: grey;
+    padding-top: 150px;
+    text-align: center;
   }
 
   .reportTitle {
