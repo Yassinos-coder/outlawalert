@@ -1,4 +1,4 @@
-# outlawalert
+# Outlaw Alert
    Outlaw Alert is a web application built with MERN stack that allows users to report any unlawful behavior to the police department, 
    which can then take necessary actions. The application provides a platform for users to easily report incidents of unlawful behavior such as theft, 
    violence, or any other criminal activity. The application aims to help create a safer community by encouraging users to report such incidents 
