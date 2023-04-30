@@ -5,7 +5,7 @@
    and enabling law enforcement agencies to take prompt actions. With its user-friendly interface and robust backend, Outlaw Alert promises to be a reliable tool in 
    ensuring public safety.
 # Youtube 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/oKcYER9mwKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+  https://streamable.com/0hyu4m  
 # License
    This project is under 'GNU General Public License (GPL) Version 3' Licensing.
     
