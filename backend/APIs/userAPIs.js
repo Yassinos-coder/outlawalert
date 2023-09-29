@@ -9,33 +9,6 @@ const { JWT } = require("../Helpers/jwtConfig");
 const randomString = require("randomstring");
 const nodemailer = require("nodemailer");
 
-const newNoticeOnEmail = async (emailRecipient, message, subject) => {
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: "sactroanonymous@Gmail.com",
-      pass: process.env.EMAIL_APP_PASS,
-    },
-  });
-  // const ipaddress = await axios.get('https://api.ipify.org', (req, res) => {return res})
-  //const ipInfo = await axios.get(`http://api.ipstack.com/${ipaddress.data}?access_key=a2189b78e421fd72cd5cd1b44a528e15`, (req, res) => //{return res})
-
-  // send email using the transporter
-  let mailOptions = {
-    from: "smp.newpass@gmail.com",
-    to: emailRecipient,
-    subject: subject,
-    html: message,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-    }
-  });
-};
 
 userAPI.post("/user/newUser", async (req, res) => {
   let newUserData = req.body;
@@ -103,36 +76,6 @@ userAPI.get("/user/GetUserData/:uuid", async (req, res) => {
 
 userAPI.post("/user/LogIn", async (req, res) => {
   let loginCreds = req.body;
-  //let mailSubject = "New Connection Detected ⚠️!";
-  /* let htmlMsg = `
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <div class="emailBody">
-        <div class="emailHeader">
-          <h1 id="headerTitle">⚠️ New Connection Detected</h1>
-        </div>
-        <div class="mainBody">
-          <p>
-            We detected a new login from this IP Address: <br />
-              ${ipInfo.data.ip} <br />
-            located in ${ipInfo.data.city}, ${ipInfo.data.region_name}, <br />
-            ${ipInfo.data.country_name}
-            ${ipInfo.data.location.country_flag_emoji},
-            ${ipInfo.data.continent_name}
-          </p>
-          <p id="noticeP">
-            If that wasn't you, we recommend that you change your password right
-            away.
-          </p>
-        </div>
-      </div>
-    </body>
-  </html>
-  `; */
 
   try {
     const isUserLegit = await UserModel.findOne({ cin: loginCreds.cin });
@@ -144,9 +87,8 @@ userAPI.post("/user/LogIn", async (req, res) => {
       if (result === true) {
         const jwtToken = jsonwebtoken.sign(
           isUserLegit.username,
-          process.env.ACCESS_TOKEN
+          process.env.SECRET_SERVICE
         );
-        // newNoticeOnEmail(isUserLegit.email, htmlMsg, mailSubject);
         res.send({
           token: jwtToken,
           userData: isUserLegit,
