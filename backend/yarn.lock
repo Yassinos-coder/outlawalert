@@ -336,10 +336,10 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
-express-fileupload@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/express-fileupload/-/express-fileupload-1.4.2.tgz#59f8ab14f9d12c4b53dfc29e56face4313ca0b59"
-  integrity sha512-vk+9cK595jP03T+YgoYPAebynVCZuUBtW1JkyJnitQnWzlONHdxdAIm9yo99V4viTEftq7MUfzuqmWyqWGzMIg==
+express-fileupload@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/express-fileupload/-/express-fileupload-1.4.3.tgz#32cbb405ba12f541d445838464e081defba4ef61"
+  integrity sha512-vRzZo2YELm68DfR/CX8RMXgeK9BTAANxigrKACPjCXFGEzkCt/QWbqaIXP3W61uaX/hLj0CAo3/EVelpSQXkqA==
   dependencies:
     busboy "^1.6.0"
 
