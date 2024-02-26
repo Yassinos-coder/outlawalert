@@ -840,10 +840,10 @@ nodemailer@^6.9.7:
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.7.tgz#ec2f488f62ba1558e7b19239b62778df4a5c4397"
   integrity sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw==
 
-nodemon@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-3.0.2.tgz#222dd0de79fc7b7b3eedba422d2b9e5fc678621e"
-  integrity sha512-9qIN2LNTrEzpOPBaWHTm4Asy1LxXLSickZStAQ4IZe7zsoIpD/A7LWxhZV3t4Zu352uBcqVnRsDXSMR2Sc3lTA==
+nodemon@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-3.1.0.tgz#ff7394f2450eb6a5e96fe4180acd5176b29799c9"
+  integrity sha512-xqlktYlDMCepBJd43ZQhjWwMw2obW/JRvkrLxq5RCNcuDDX1DbcPT+qT1IlIIdf+DhnWs90JpTMe+Y5KxOchvA==
   dependencies:
     chokidar "^3.5.2"
     debug "^4"
